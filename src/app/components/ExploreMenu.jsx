@@ -21,7 +21,7 @@ const ExploreMenu = () => {
   ];
 
   return (
-    <div className='h-full w-[85vw] flex flex-col mx-auto my-10'>
+    <div className='h-full w-[80vw] flex flex-col mx-auto my-10'>
       <div className='text-brand-secondary text-3xl uppercase font-bold'>
         <h2>
         <span className="relative inline-block">
@@ -35,7 +35,7 @@ const ExploreMenu = () => {
       <Carousel className="mt-8">
         <CarouselContent className="-ml-1">
           {CardSlide.map((slide, index) => (
-            <CarouselItem key={index} className="pl-1 md:basis-1/2 lg:basis-1/5">
+            <CarouselItem key={index} className="flex items-center justify-center pl-1 md:basis-1/3 lg:basis-1/5">
               <div className="p-1">
                 <Card className="cursor-pointer">
                   <CardContent className="flex flex-col mx-auto aspect-square items-center justify-between h-full p-4">
