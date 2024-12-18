@@ -5,7 +5,7 @@ import { RiYoutubeFill, RiInstagramLine, RiFacebookFill } from "react-icons/ri";
 const Footer = () => {
   return (
     <>
-      <footer className="bg-brand-darkGray py-14">
+      <footer className="bg-brand-darkGray font-ftr py-14">
         <div className="container mx-auto px-4">
           {/* Logo and Social Links */}
           <div className="flex justify-center items-center space-x-14">
@@ -18,7 +18,7 @@ const Footer = () => {
               <Link href="/" className="bg-white p-2 rounded-full text-brand-primary">
                 <RiYoutubeFill className="text-3xl" />
               </Link>
-              <Link href="/" className="bg-white p-2 rounded-full text-pink-500">
+              <Link href="/" className="bg-white p-2 rounded-full">
                 <RiInstagramLine className="text-3xl" />
               </Link>
               <Link href="/" className="bg-white p-2 rounded-full text-blue-600">
@@ -104,7 +104,7 @@ const Footer = () => {
           <div className="mt-2 text-white text-md lg:px-12 flex justify-between flex-col lg:flex-row md:flex-row ">
             <p className="m-0">2024 KFC. All rights reserved</p>
             <div>
-              <h1 className="text-red-700 font-semibold">Powered by</h1>
+              <h1 className="text-brand-primary font-logo font-semibold">Powered by</h1>
               <Link href="/" className="  underline" >SimpleX Technology Solutions</Link>
             </div>
           </div>
