@@ -14,7 +14,7 @@ module.exports = {
   				secondary: '#FFFFFF',
   				accent: '#000000',
   				lightGray: '#F5F5F5',
-  				darkGray: '#1C1C1C'
+  				darkGray: '#1C1C1C',
   			},
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',

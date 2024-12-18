@@ -13,7 +13,7 @@ import {
   const Navbar = () => {
 
     const navLinks = [
-        {name:'About Us' , path:'#'},
+        {name:'About Us' , path:'/aboutus'},
         {name:'FeedBack' , path:'#'},
         {name:'Terms & Conditions' , path:'#'},
         {name:'Privacy Policy' , path:'#'},
@@ -30,7 +30,7 @@ import {
 
     ]
   return (
-  <nav className='bg-brand-accent lg:h-24 w-full lg:flex items-center py-2 lg:py-0 '>
+  <nav className='fixed top-0 left-0 z-50 shadow-md bg-brand-accent lg:h-24 w-full lg:flex items-center py-2 lg:py-0 '>
     <div className="container flex items-center justify-between p-4 lg:px-24 lg:mx-auto">
         <div className="flex items-center ">
             <Sheet>

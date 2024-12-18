@@ -16,7 +16,7 @@ const Hero = () => {
     { id: 3, url: '/images/slider3.jpg', alt: 'Slide 3' },
   ];
   return (
-    <div className="relative w-full h-full bg-brand-accent">
+    <div className="relative w-full h-full mt-20 bg-brand-accent">
       {/* Carousel */}
       <div className="overflow-hidden" ref={emblaRef}>
         <div className="flex">
