@@ -8,13 +8,17 @@ module.exports = {
   ],
   theme: {
   	extend: {
+		fontFamily: {
+			logo: ["Cinzel"],
+			ftr: ["'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"]
+		},
   		colors: {
   			brand: {
   				primary: '#D71A28',
   				secondary: '#FFFFFF',
   				accent: '#000000',
   				lightGray: '#F5F5F5',
-  				darkGray: '#1C1C1C',
+  				darkGray: '#1D1815',
   			},
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
