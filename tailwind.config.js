@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+	reactStrictMode: true,
     darkMode: ["class"],
     content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -19,6 +20,9 @@ module.exports = {
   				accent: '#000000',
   				lightGray: '#F5F5F5',
   				darkGray: '#1D1815',
+				lgInp: "#282220",
+				inpred: "#FF0000",
+				inpnot: "#70120F"
   			},
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
