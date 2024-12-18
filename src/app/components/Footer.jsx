@@ -5,7 +5,7 @@ import { RiYoutubeFill, RiInstagramLine, RiFacebookFill } from "react-icons/ri";
 const Footer = () => {
   return (
     <>
-      <footer className="bg-[#1C1C1C] py-14">
+      <footer className="bg-brand-darkGray py-14">
         <div className="container mx-auto px-4">
           {/* Logo and Social Links */}
           <div className="flex justify-center items-center space-x-14">
@@ -15,7 +15,7 @@ const Footer = () => {
               className="cursor-pointer w-20 h-auto"
             />
             <div className="flex gap-3">
-              <Link href="/" className="bg-white p-2 rounded-full text-red-800">
+              <Link href="/" className="bg-white p-2 rounded-full text-brand-primary">
                 <RiYoutubeFill className="text-3xl" />
               </Link>
               <Link href="/" className="bg-white p-2 rounded-full text-pink-500">
