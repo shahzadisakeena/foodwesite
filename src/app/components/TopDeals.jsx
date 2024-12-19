@@ -24,7 +24,7 @@ const TopDeals = () => {
         </h2>
       </div>
 
-      <div className="flex flex-wrap gap-6 mt-8 ">
+      <div className="flex items-center justify-center flex-wrap gap-6 mt-8 ">
         {CardData.map((deal, index) => (
           <div key={index} className="p-1 group">
             <Card className="cursor-pointer rounded-md h-[460px] w-[295px] relative shadow-lg">
