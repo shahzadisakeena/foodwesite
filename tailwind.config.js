@@ -11,7 +11,10 @@ module.exports = {
   	extend: {
 		fontFamily: {
 			logo: ["Cinzel"],
-			ftr: ["'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"]
+			ftr: ["'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"],
+			login: ['National2CondensedBold'],
+			sym: ['National2Condensed'],
+			lgbtn: ['National2Medium'],
 		},
   		colors: {
   			brand: {
@@ -21,8 +24,8 @@ module.exports = {
   				lightGray: '#F5F5F5',
   				darkGray: '#1D1815',
 				lgInp: "#282220",
-				inpred: "#FF0000",
-				inpnot: "#70120F"
+				inpred: "#EA002A",
+				inpnot: "#E4002B45"
   			},
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
