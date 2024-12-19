@@ -84,3 +84,16 @@ body{
 }
 
 
+@font-face{
+  font-family: "National2Condensed";
+  src: url("/fonts/National2Condensed.ttf") format("truetype");
+}
+
+@font-face{
+  font-family: "National2CondensedBold";
+  src: url("/fonts/TestNational2Condensed-Bold.otf") format("opentype");
+}
+@font-face{
+  font-family: "National2Medium";
+  src: url("/fonts/TestNational2-Medium.otf") format("opentype");
+}
