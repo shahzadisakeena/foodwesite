@@ -8,16 +8,16 @@ import {
 } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
 import Image from 'next/image';
-
+import Link from 'next/link';
 const ExploreMenu = () => {
   const CardSlide = [
-    { img: '/images/card5.png', title: 'food' },
-    { img: '/images/card2.png', title: 'food' },
-    { img: '/images/card3.png', title: 'food' },
-    { img: '/images/card6.png', title: 'food' },
-    { img: '/images/card5.png', title: 'food' },
-    { img: '/images/card6.png', title: 'food' },
-    { img: '/images/card2.png', title: 'food' },
+    { img: '/images/cat1.png', title: 'food' },
+    { img: '/images/cat2.png', title: 'food' },
+    { img: '/images/cat3.png', title: 'food' },
+    { img: '/images/cat4.png', title: 'food' },
+    { img: '/images/cat5.png', title: 'food' },
+    { img: '/images/cat6.png', title: 'food' },
+    { img: '/images/cat7.png', title: 'food' },
   ];
 
   return (
@@ -37,15 +37,16 @@ const ExploreMenu = () => {
           {CardSlide.map((slide, index) => (
             <CarouselItem key={index} className="flex items-center justify-center pl-1 sm:basis-1/2 lg:basis-1/5">
               <div className="p-1">
+                <Link href="/menu">
                 <Card className="cursor-pointer rounded-full w-[210px] h-[210px]">
-                  <CardContent className="flex flex-col mx-auto aspect-square items-center justify-between h-full p-2">
+                  <CardContent className="flex flex-col mx-auto aspect-square items-center justify-center h-full p-2">
                     {/* Use Next.js Image component for optimized images */}
-                    <div className="flex justify-center mb-4">
+                    <div className="flex justify-center ">
                       <Image
                         src={slide.img}
                         alt={`Card ${slide.title}`}
-                        width={150} // Set width for the image
-                        height={150} // Set height for the image
+                        width={180} // Set width for the image
+                        height={180} // Set height for the image
                         className="object-cover rounded-lg"
                       />
                     </div>
@@ -58,6 +59,8 @@ const ExploreMenu = () => {
                     </div>
                   </CardContent>
                 </Card>
+                </Link>
+                
               </div>
             </CarouselItem>
           ))}

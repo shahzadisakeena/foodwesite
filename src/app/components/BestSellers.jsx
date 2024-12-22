@@ -1,4 +1,6 @@
-import React from 'react';
+'use client'
+
+import React, { useState } from 'react';
 import {
   Carousel,
   CarouselContent,
@@ -7,64 +9,100 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
-import Image from 'next/image';
+import {
+  AlertDialog,
+  AlertDialogContent,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogCancel,
+  AlertDialogAction,
+} from "@/components/ui/alert-dialog";
 
+import Image from 'next/image';
+import { X , Minus , Plus } from 'lucide-react';
 const BestSellers = () => {
+  const [selectedProduct, setSelectedProduct] = useState(null);
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+const [quantity , setQuantity]  = useState(1)
+const [initialPrice, setInitialPrice] = useState(0);
+
   const CardSlide = [
-    { img: '/images/card5.png', title: 'Krunch Combo', price:"RS 570" },
-    { img: '/images/card2.png', title: 'Krunch Burger', price:"RS 490" },
-    { img: '/images/card3.png', title: 'Chicken & Chips', price:"RS 340" },
-    { img: '/images/card6.png', title: 'Hot Wings Bucket', price:"RS 770" },
-    { img: '/images/card5.png', title: 'Mighty Zinger', price:"RS 650" },
-   
+    { img: '/images/BS1.png', title: 'Krunch Combo', price:  570, description: 'Krunch fillet, spicy mayo, lettuce, sandwiched between a sesame seed bun' },
+    { img: '/images/BS2.png', title: 'Krunch Burger',  price:  490, description: '1 Krunch burger + 1 Regular fries + 1 Regular drink' },
+    { img: '/images/BS3.png', title: 'Chicken & Chips',  price:  340, description: '2 pieces of Hot and Crispy Fried Chicken+ Fries + Dinner roll+ signature Vietnamese Sauce' },
+    { img: '/images/BS4.png', title: 'Hot Wings Bucket',   price:  770, description: '10 Pcs of our Signature Hot & Crispy Wings' },
+    { img: '/images/BS5.png', title: 'Mighty Zinger',   price: 650, description: 'Our signature Zinger but Bigger! Double Zinger fillet with a combination of spicy and plain mayo, lettuce and cheese- sandwiched between a sesame seed bun' },
   ];
 
+  const openDialog = (product) => {
+    setSelectedProduct(product);
+    setIsDialogOpen(true);
+    setQuantity(1)
+    setInitialPrice(product.price); // Set the initial price
+
+  };
+
+  const closeDialog = () => {
+    setSelectedProduct(null);
+    setIsDialogOpen(false);
+  };
+  const incrementQuantity = ()=>{
+    setQuantity((prev)=>prev+1)
+  }
+const decrementQuantity = ()=>{
+  setQuantity((prev)=>(prev > 1 ? prev-1:1))
+}
+const calculateTotalPrice = ()=>{
+  return (initialPrice*quantity).toFixed(2);
+}
   return (
-    <div className='h-full w-[85vw] flex flex-col mx-auto my-10'>
-      <div className='text-brand-secondary text-3xl uppercase font-bold'>
+    <div className="h-full w-[85vw] flex flex-col mx-auto my-10">
+      <div className="text-brand-secondary text-3xl uppercase font-bold">
         <h2>
-        <span className="relative inline-block">
-      Best
-      {/* Half underline effect */}
-      <span className="absolute bottom-0 left-0 w-full border-b-2 rounded-full border-brand-primary" style={{ width: '100%' }} />
-    </span>
-    <span className="mx-2">Sellers</span></h2>
+          <span className="relative inline-block">
+            Best
+            <span
+              className="absolute bottom-0 left-0 w-full border-b-2 rounded-full border-brand-primary"
+              style={{ width: '100%' }}
+            />
+          </span>
+          <span className="mx-2">Sellers</span>
+        </h2>
       </div>
-      
-      <Carousel className="mt-8 ">
+
+      <Carousel className="mt-8">
         <CarouselContent className="-ml-1">
           {CardSlide.map((slide, index) => (
-            <CarouselItem key={index} className="flex items-center justify-center pl-1 sm:basis-1/2 lg:basis-1/4">
+            <CarouselItem
+              key={index}
+              className="flex items-center justify-center pl-1 sm:basis-1/2 lg:basis-1/4"
+            >
               <div className="p-1">
-                <Card className="cursor-pointer rounded-md h-[365px] w-[260px] relative shadow-lg">
+                <Card
+                  onClick={() => openDialog(slide)}
+                  className="cursor-pointer rounded-md h-[365px] w-[260px] relative shadow-lg"
+                >
                   <CardContent className="flex flex-col justify-center mx-auto h-full p-4">
-                <div className='flex flex-col items-start justify-start mt-4'>
-                <div className=" relative inline-block text-brand-secondary text-xl font-semibold ">{slide.title}
-                        
+                    <div className="flex flex-col items-start justify-start mt-4">
+                      <div className="relative inline-block text-brand-secondary text-xl font-semibold">
+                        {slide.title}
+                      </div>
+                      <div className="flex flex-col mt-2 mx-2">
+                        <div className="bg-brand-primary text-brand-secondary text-sm font-bold px-4 py-1 rounded-full shadow ml-32">
+                        RS.  {slide.price} 
                         </div>
-                        <div className='flex flex-col mt-2 mx-2'>
-                        <div className='  bg-brand-primary text-brand-secondary text-sm font-bold px-4 py-1 rounded-full shadow ml-32'>
-                          {slide.price}
-                        </div>
-                        </div>
-                     
-                
-                </div>
-                 
-                    <div className="flex justify-center items-center mt-8">
-                  
+                      </div>
+                    </div>
+                    <div className="flex justify-center items-center ">
                       <Image
                         src={slide.img}
                         alt={`Card ${slide.title}`}
-                        width={300} 
-                        height={300} 
-                        className="object-cover rounded-lg "
+                        width={380}
+                        height={380}
+                        className="object-cover rounded-lg"
                       />
-                    </div>
-                  
-                    {/* Title container */}
-                    <div className="flex items-center  justify-center w-full">
-                     
                     </div>
                   </CardContent>
                 </Card>
@@ -72,9 +110,56 @@ const BestSellers = () => {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselNext className="bg-brand-primary border-none text-brand-secondary " />
+        <CarouselNext className="bg-brand-primary border-none text-brand-secondary" />
         <CarouselPrevious className="bg-brand-primary border-none text-brand-secondary" />
       </Carousel>
+
+      {isDialogOpen && (
+        <AlertDialog  open={isDialogOpen} onOpenChange={closeDialog}>
+          <AlertDialogContent className="flex items-center justify-center flex-col lg:max-w-[800px] w-[350px] lg:h-[600px] h-[500px] bg-brand-darkGray border-none !rounded-3xl " >
+          <AlertDialogCancel onClick={closeDialog} className="absolute top-4 right-4 bg-brand-primary border-none">
+            <X strokeWidth={4} 
+            />
+          </AlertDialogCancel>
+            
+           
+            <div className="flex justify-center lg:my-4 -mt-10 lg:-mt-0">
+              <Image
+                src={selectedProduct?.img}
+                alt={selectedProduct?.title}
+                width={200}
+                height={200}
+                className="object-cover lg:w-[300px] lg:h-[300px] w-[280px] h-[280px]"
+              />
+            </div>
+            <div className='flex flex-col items-center justify-center mx-auto'>
+            <AlertDialogHeader>
+              <div><AlertDialogTitle className="lg:text-4xl text-3xl text-brand-secondary text-center lg:-mt-14 -mt-10">{selectedProduct?.title}</AlertDialogTitle>
+              </div>
+              <AlertDialogDescription className="lg:text-lg text-md text-brand-secondary lg:px-36 text-center lg:!-mt-4 !-mt-2">
+                {selectedProduct?.description}
+              </AlertDialogDescription>
+            </AlertDialogHeader>
+            <div className='flex items-center justify-center lg:mt-5 mt-2'>
+              <button className='border-2 border-brand-primary p-1 rounded-lg text-brand-secondary' onClick={decrementQuantity}>
+                <Minus/>
+              </button>
+              <div className='text-brand-secondary mx-4 text-2xl'>{quantity}</div>
+              <button className='border-2 border-brand-primary p-1 rounded-lg text-brand-secondary' onClick={incrementQuantity}><Plus/></button>
+
+            </div>
+            </div>
+          
+            <AlertDialogFooter>
+              <AlertDialogAction className="bg-brand-primary lg:text-xl text-lg text-brand-secondary   lg:w-[50%] lg:h-14 h-12 flex justify-center lg:mt-5 items-center mx-auto "> <span className='mr-6'> {calculateTotalPrice()} RS</span>  Add to Bucket</AlertDialogAction>
+            </AlertDialogFooter>
+
+          
+          
+
+          </AlertDialogContent>
+          </AlertDialog>
+      )}
     </div>
   );
 };

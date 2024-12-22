@@ -33,7 +33,7 @@ const KfcStory = () => {
   ];
 
   return (
-    <div className="flex flex-col mt-20 h-full w-[85vw] mx-auto">
+    <div className="flex flex-col lg:mt-20 mt-10 h-full w-[85vw] mx-auto">
       {/* Heading */}
       <div className="flex items-start justify-start">
         <h2 className="lg:text-3xl md:text-2xl sm:text-xl text-brand-secondary font-bold">
@@ -57,7 +57,7 @@ const KfcStory = () => {
             {/* Octagon Content */}
             <span className="absolute inset-0 flex flex-col items-center justify-center text-brand-secondary text-center px-4">
               <h1 className="text-4xl font-bold sm:text-3xl">{item.year}</h1>
-              <p className="text-sm mt-3 sm:text-xs">{item.text}</p>
+              <p className="text-sm mt-3 sm:text-xs px-4">{item.text}</p>
             </span>
           </div>
         ))}
@@ -79,7 +79,7 @@ const KfcStory = () => {
             {/* Octagon Content */}
             <span className="absolute inset-0 flex flex-col items-center justify-center text-brand-secondary text-center px-4">
               <h1 className="text-4xl font-bold sm:text-3xl">{item.year}</h1>
-              <p className="text-sm mt-3 sm:text-xs">{item.text}</p>
+              <p className="text-sm mt-3 sm:text-xs px-4">{item.text}</p>
             </span>
           </div>
         ))}

@@ -1,20 +1,16 @@
+/* Import font at the very top */
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
-
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
-
-body{
+body {
     background-color: #000000;
-    margin: 0; 
+    margin: 0;
     padding: 0;
-    font-family: '"Cinzel", serif';
+    font-family: 'Cinzel', serif;
 }
-
-
 
 @layer base {
   :root {
@@ -72,15 +68,11 @@ body{
     }
 }
 
-
-
 @layer base {
   * {
     @apply border-border;
-    }
+  }
   body {
     @apply bg-background text-foreground;
-    }
+  }
 }
-
-

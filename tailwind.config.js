@@ -9,10 +9,14 @@ module.exports = {
   ],
   theme: {
   	extend: {
-		fontFamily: {
-			logo: ["Cinzel"],
-			ftr: ["'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"]
-		},
+  		fontFamily: {
+  			logo: [
+  				'Cinzel'
+  			],
+  			ftr: [
+  				'Segoe UI', 'Tahoma', 'Geneva', 'Verdana', 'sans-serif'
+  			],
+  		},
   		colors: {
   			brand: {
   				primary: '#D71A28',
@@ -20,9 +24,9 @@ module.exports = {
   				accent: '#000000',
   				lightGray: '#F5F5F5',
   				darkGray: '#1D1815',
-				lgInp: "#282220",
-				inpred: "#FF0000",
-				inpnot: "#70120F"
+  				lgInp: '#282220',
+  				inpred: '#FF0000',
+  				inpnot: '#70120F'
   			},
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
@@ -69,6 +73,28 @@ module.exports = {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
+  		},
+  		keyframes: {
+  			'accordion-down': {
+  				from: {
+  					height: '0'
+  				},
+  				to: {
+  					height: 'var(--radix-accordion-content-height)'
+  				}
+  			},
+  			'accordion-up': {
+  				from: {
+  					height: 'var(--radix-accordion-content-height)'
+  				},
+  				to: {
+  					height: '0'
+  				}
+  			}
+  		},
+  		animation: {
+  			'accordion-down': 'accordion-down 0.2s ease-out',
+  			'accordion-up': 'accordion-up 0.2s ease-out'
   		}
   	}
   },

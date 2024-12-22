@@ -26,13 +26,13 @@ const factsData = [
 
 const FastFacts = () => {
   return (
-    <div className="h-full w-full bg-brand-darkGray my-20">
+    <div className="h-full w-full bg-brand-darkGray lg:my-20 my-10">
       <div className="flex items-start justify-start w-[85vw] mx-auto py-10">
-        <h2 className="text-3xl text-brand-secondary font-bold">Fast Facts about KFC Pakistan</h2>
+        <h2 className="lg:text-3xl text-xl text-brand-secondary font-bold">Fast Facts about KFC Pakistan</h2>
       </div>
 
       {/* Facts Rendering */}
-      <div className="flex items-center justify-between mt-10 w-[90vw] mx-auto gap-4">
+      <div className="flex lg:flex-row flex-col items-center justify-between mt-10 w-[90vw] mx-auto gap-4">
         {factsData.map((fact, index) => (
           <div key={index} className="flex flex-col items-center justify-center">
             <Image
