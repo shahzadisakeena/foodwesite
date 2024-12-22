@@ -9,14 +9,10 @@ module.exports = {
   ],
   theme: {
   	extend: {
-  		fontFamily: {
-  			logo: [
-  				'Cinzel'
-  			],
-  			ftr: [
-  				'Segoe UI', 'Tahoma', 'Geneva', 'Verdana', 'sans-serif'
-  			],
-  		},
+		fontFamily: {
+			logo: ["Cinzel"],
+			ftr: ["'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"]
+		},
   		colors: {
   			brand: {
   				primary: '#D71A28',
@@ -24,9 +20,9 @@ module.exports = {
   				accent: '#000000',
   				lightGray: '#F5F5F5',
   				darkGray: '#1D1815',
-  				lgInp: '#282220',
-  				inpred: '#FF0000',
-  				inpnot: '#70120F'
+				lgInp: "#282220",
+				inpred: "#FF0000",
+				inpnot: "#70120F"
   			},
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
