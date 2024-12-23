@@ -108,7 +108,10 @@ import {
           KFC
         </span>
       </Link>
+      <Link href="/bucket">
       <ShoppingBag className="text-brand-primary mx-6 hidden lg:block" size={35} />
+
+      </Link>
       <Link href="/login">
       <button className="bg-brand-primary px-4 py-2 h-10 rounded-md text-brand-secondary font-bold hidden lg:block">
         LOGIN
@@ -141,7 +144,10 @@ import {
   </button>
   
   <div className=" flex items-center justify-end">
-  <ShoppingBag className="text-brand-primary " size={25} />
+    <Link href="/bucket">
+    <ShoppingBag className="text-brand-primary " size={25} />
+
+    </Link>
 
   </div>
 </div>
