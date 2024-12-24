@@ -91,3 +91,15 @@ body {
   font-family: "National2Medium";
   src: url("/fonts/TestNational2-Medium.otf") format("opentype");
 }
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; 
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333332; 
+  border-radius: 5px;
+}
