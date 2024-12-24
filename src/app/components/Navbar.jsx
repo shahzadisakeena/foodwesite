@@ -112,49 +112,51 @@ const Navbar = () => {
             <PickupBtn />
           </div>
         </div>
-        <div className='flex items-center ml-auto lg:ml-0'>
-          <Link href='/' className='lg:hidden'>
-            <span className='text-brand-primary font-extrabold text-2xl '>
-              KFC
-            </span>
-          </Link>
-          <ShoppingBag
-            className='text-brand-primary mx-6 hidden lg:block'
-            size={35}
-          />
-          <Link href='/login'>
-            <button className='bg-brand-primary px-4 py-2 h-10 rounded-md text-brand-secondary font-bold hidden lg:block'>
-              LOGIN
-            </button>
-          </Link>
-        </div>
-      </div>
-      <div className='flex lg:hidden items-center justify-center  space-x-2'>
-        <button className='bg-brand-darkGray focus:border-brand-primary focus:border-[3px] rounded-md px-3 py-1 text-brand-secondary w-34 h-10 flex items-center justify-center space-x-2'>
-          <Image
-            src='/images/Delivery.png'
-            alt='Deliver'
-            width={30}
-            height={30}
-          />
-          <span className='lg:font-bold'>DELIVERY</span>
-        </button>
+        <div className="flex items-center ml-auto lg:ml-0">
+      <Link href="/" className="lg:hidden">
+        <span className="text-brand-primary font-extrabold text-2xl ">
+          KFC
+        </span>
+      </Link>
+      <ShoppingBag className="text-brand-primary mx-6 hidden lg:block" size={35} />
+      <Link href="/login">
+      <button className="bg-brand-primary px-4 py-2 h-10 rounded-md text-brand-secondary font-bold hidden lg:block">
+        LOGIN
+      </button>
+      </Link>
+     
+    
 
-        <button className='bg-brand-darkGray focus:border-brand-primary focus:border-[3px] rounded-md px-4 py-2 text-brand-secondary w-34 h-10 flex items-center justify-center space-x-2'>
-          <Image
-            src='/images/pickup.png'
-            alt='Deliver'
-            width={30}
-            height={30}
-          />{' '}
-          <span className='lg:font-bold'>PICK UP</span>
-        </button>
+    </div>
 
-        <div className=' flex items-center justify-end'>
-          <ShoppingBag className='text-brand-primary ' size={25} />
-        </div>
-      </div>
-    </nav>
+    </div>
+    <div className="flex lg:hidden items-center justify-center  space-x-2">
+  <button className="bg-brand-darkGray focus:border-brand-primary focus:border-[3px] rounded-md px-3 py-1 text-brand-secondary w-34 h-10 flex items-center justify-center space-x-2">
+    <Image
+    src="/images/Delivery.png"
+    alt="Deliver"
+    width={30}
+    height={30}
+    />
+    <span className="lg:font-bold">DELIVERY</span>
+  </button>
+
+  <button className="bg-brand-darkGray focus:border-brand-primary focus:border-[3px] rounded-md px-4 py-2 text-brand-secondary w-34 h-10 flex items-center justify-center space-x-2">
+  <Image
+    src="/images/pickup.png"
+    alt="Deliver"
+    width={30}
+    height={30}
+    />    <span className="lg:font-bold">PICK UP</span>
+  </button>
+  
+  <div className=" flex items-center justify-end">
+  <ShoppingBag className="text-brand-primary " size={25} />
+
+  </div>
+</div>
+
+  </nav>
   )
 }
 

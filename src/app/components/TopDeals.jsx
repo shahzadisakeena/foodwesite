@@ -100,7 +100,7 @@ return (initialPrice*quantity).toFixed(2);
       </div>
       {isDialogOpen && (
         <AlertDialog open={isDialogOpen} onOpenChange={closeDialog}>
-          <AlertDialogContent className="lg:max-w-[800px] w-[350px] h-[550px] lg:h-[600px] bg-brand-darkGray border-none !rounded-3xl">
+          <AlertDialogContent className="lg:max-w-[800px] max-w-[350px] h-[550px] lg:h-[600px] bg-brand-darkGray border-none !rounded-3xl">
             <AlertDialogCancel onClick={closeDialog} className="absolute top-4 right-4 bg-brand-primary border-none">
               <X strokeWidth={4}/>
             </AlertDialogCancel>

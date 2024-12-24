@@ -116,7 +116,7 @@ const calculateTotalPrice = ()=>{
 
       {isDialogOpen && (
         <AlertDialog  open={isDialogOpen} onOpenChange={closeDialog}>
-          <AlertDialogContent className="flex items-center justify-center flex-col lg:max-w-[800px] w-[350px] lg:h-[600px] h-[500px] bg-brand-darkGray border-none !rounded-3xl " >
+          <AlertDialogContent className="flex items-center justify-center flex-col lg:max-w-[800px] max-w-[350px] lg:h-[600px] h-[550px] bg-brand-darkGray border-none !rounded-3xl " >
           <AlertDialogCancel onClick={closeDialog} className="absolute top-4 right-4 bg-brand-primary border-none">
             <X strokeWidth={4} 
             />
@@ -151,7 +151,7 @@ const calculateTotalPrice = ()=>{
             </div>
           
             <AlertDialogFooter>
-              <AlertDialogAction className="bg-brand-primary lg:text-xl text-lg text-brand-secondary   lg:w-[50%] lg:h-14 h-12 flex justify-center lg:mt-5 items-center mx-auto "> <span className='mr-6'> {calculateTotalPrice()} RS</span>  Add to Bucket</AlertDialogAction>
+              <AlertDialogAction className="bg-brand-primary lg:text-xl text-lg text-brand-secondary   w-72  lg:h-14 h-12 flex justify-center lg:mt-5 items-center mx-auto "> <span className='mr-6'> {calculateTotalPrice()} RS</span>  Add to Bucket</AlertDialogAction>
             </AlertDialogFooter>
 
           
