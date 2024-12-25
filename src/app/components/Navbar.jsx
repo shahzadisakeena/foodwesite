@@ -10,21 +10,23 @@ import {
     SheetTrigger,
   } from "@/components/ui/sheet"
   import { Switch } from "@/components/ui/switch"
+  import CustomDialog from "./DeliveryBtn"
+  import PickupBtn from "./PickupBtn"
   import Image from "next/image";
   const Navbar = () => {
     const navLinks = [
         {name:'About Us' , path:'/aboutus'},
-        {name:'FeedBack' , path:'#'},
-        {name:'Terms & Conditions' , path:'#'},
-        {name:'Privacy Policy' , path:'#'},
-        {name:'Contact Us' , path:'#'},
+        {name:'FeedBack' , path:'/feedback'},
+        {name:'Terms & Conditions' , path:'/termscon'},
+        {name:'Privacy Policy' , path:'/privacypolicy'},
+        {name:'Contact Us' , path:'/contactus'},
         {name:'Mitao Bhook' , path:'#'},
         {name:'Careers' , path:'#'},
 
     ]
     const expOptions = [
         {name:'Store Locator' , path:'#' , icon:<MapPinHouse size={20}/>  },
-        {name:'Track Order' , path:'#' , icon: <PackageSearch size={20}/> },
+        {name:'Track Order' , path:'/trackorder' , icon: <PackageSearch size={20}/> },
         {name:'Explore Menu' , path:'#' , icon: <Logs size={20}/>},
 
 
