@@ -14,17 +14,17 @@ import {
   const Navbar = () => {
     const navLinks = [
         {name:'About Us' , path:'/aboutus'},
-        {name:'FeedBack' , path:'#'},
-        {name:'Terms & Conditions' , path:'#'},
-        {name:'Privacy Policy' , path:'#'},
-        {name:'Contact Us' , path:'#'},
+        {name:'FeedBack' , path:'/feedback'},
+        {name:'Terms & Conditions' , path:'/termscon'},
+        {name:'Privacy Policy' , path:'/privacypolicy'},
+        {name:'Contact Us' , path:'/contactus'},
         {name:'Mitao Bhook' , path:'#'},
-        {name:'Careers' , path:'#'},
+        {name:'Careers' , path:'/careers'},
 
     ]
     const expOptions = [
         {name:'Store Locator' , path:'#' , icon:<MapPinHouse size={20}/>  },
-        {name:'Track Order' , path:'#' , icon: <PackageSearch size={20}/> },
+        {name:'Track Order' , path:'/trackorder' , icon: <PackageSearch size={20}/> },
         {name:'Explore Menu' , path:'#' , icon: <Logs size={20}/>},
 
 
@@ -40,7 +40,10 @@ import {
                 </SheetTrigger>
 <SheetContent>
     <div className=" p-3">
-    <button className="bg-brand-primary px-3 py-3 rounded-md text-brand-secondary font-semibold ">LOGIN</button>
+      <Link href="/login">
+      <button className="bg-brand-primary px-3 py-3 rounded-md text-brand-secondary font-semibold ">LOGIN</button>
+
+      </Link>
 
     </div>
     <div className="flex justify-end">
