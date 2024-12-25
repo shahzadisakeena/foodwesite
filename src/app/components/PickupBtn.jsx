@@ -65,7 +65,7 @@ const PickupBtn = () => {
         {/* Dialog Content */}
         <DialogContent className="rounded-lg font-login bg-brand-darkGray h-[91vh] text-white">
 
-          <DialogTitle></DialogTitle>
+          <DialogTitle>&nbsp;</DialogTitle>
           {/* Header */}
           <div className="text-2xl text-center font-bold border-b border-white pb-2">
             Pickup your order
