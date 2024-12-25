@@ -1,8 +1,7 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useState } from 'react';
 import { Dialog, DialogTrigger, DialogContent, DialogTitle } from '@/components/ui/dialog';
 import GeocodingService from "./geocoder";
 import Image from "next/image";

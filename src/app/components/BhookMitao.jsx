@@ -9,6 +9,7 @@ src="/images/bhookmitao.png"
 width={450}
 height={450}
 className="object-cover "
+alt='bhook mitao'
 />
 <p className='text-sm mt-5 text-brand-secondary lg:px-20 text-center'>is KFC’s pledge to give back to society. Over the years we have made it our mission to spread the message of hope, bringing positive change in the lives of people and providing better living standards. Mitao Bhook strengthens the community on the pillars of Education, Inclusion & Diversity.</p>
         </div>
