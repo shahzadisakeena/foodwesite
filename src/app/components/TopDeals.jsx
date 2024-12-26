@@ -1,10 +1,10 @@
-'use client'
+"use client";
 
-import React from 'react';
+import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import Image from 'next/image';
-import {Heart,X,Plus,Minus} from 'lucide-react'
-import { useState } from 'react';
+import Image from "next/image";
+import { Heart, X, Plus, Minus } from "lucide-react";
+import { useState } from "react";
 import {
   AlertDialog,
   AlertDialogContent,
@@ -16,35 +16,50 @@ import {
   AlertDialogCancel,
 } from "@/components/ui/alert-dialog";
 const TopDeals = () => {
-  const [selectedDeal, setSelectedDeal]= useState(null)
-const [isDialogOpen , setIsDialogOpen] = useState(false)
-const [quantity, setQuantity] = useState(1)
-const [initialPrice, setInitialPrice] = useState(0);
+  const [selectedDeal, setSelectedDeal] = useState(null);
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [quantity, setQuantity] = useState(1);
+  const [initialPrice, setInitialPrice] = useState(0);
 
-const CardData = [
-    { img: '/images/TD1.png', title: 'Krunch Combo', price:  950, desc:"1 Zinger Stacker + 1 Regular fries + 1 Regular drink" },
-    { img: '/images/TD2.png', title: 'Krunch Burger', price:  1350 , desc:"Turn up the fun with 5 pcs Hot & Crispy Chicken + 1 Large fries + 2 Regular drinks"},
-    { img: '/images/TD3.png', title: 'Chicken & Chips', price:  2590, desc:"An ultimate meal for the fam. It includes 4 Zinger burgers + 4 pieces Hot and Crispy Chicken + 2 Dinner rolls + 1.5 Liter drink" },
+  const CardData = [
+    {
+      img: "/images/TD1.png",
+      title: "Krunch Combo",
+      price: 950,
+      desc: "1 Zinger Stacker + 1 Regular fries + 1 Regular drink",
+    },
+    {
+      img: "/images/TD2.png",
+      title: "Krunch Burger",
+      price: 1350,
+      desc: "Turn up the fun with 5 pcs Hot & Crispy Chicken + 1 Large fries + 2 Regular drinks",
+    },
+    {
+      img: "/images/TD3.png",
+      title: "Chicken & Chips",
+      price: 2590,
+      desc: "An ultimate meal for the fam. It includes 4 Zinger burgers + 4 pieces Hot and Crispy Chicken + 2 Dinner rolls + 1.5 Liter drink",
+    },
   ];
-const openDialog = (deal) =>{
-  setSelectedDeal(deal)
-  setQuantity(1)
-  setInitialPrice(deal.price)
-  setIsDialogOpen(true)
-}
-const closeDialog =()=>{
-  setSelectedDeal(null)
-  setIsDialogOpen(false)
-}
-const incrementQuantity = ()=>{
-  setQuantity((prev)=>prev+1)
-}
-const decrementQuantity = ()=>{
-setQuantity((prev)=>(prev > 1 ? prev-1:1))
-}
-const calculateTotalPrice = ()=>{
-return (initialPrice*quantity).toFixed(2);
-}
+  const openDialog = (deal) => {
+    setSelectedDeal(deal);
+    setQuantity(1);
+    setInitialPrice(deal.price);
+    setIsDialogOpen(true);
+  };
+  const closeDialog = () => {
+    setSelectedDeal(null);
+    setIsDialogOpen(false);
+  };
+  const incrementQuantity = () => {
+    setQuantity((prev) => prev + 1);
+  };
+  const decrementQuantity = () => {
+    setQuantity((prev) => (prev > 1 ? prev - 1 : 1));
+  };
+  const calculateTotalPrice = () => {
+    return (initialPrice * quantity).toFixed(2);
+  };
   return (
     <div className="h-full w-[85vw] flex flex-col mx-auto my-10">
       <div className="text-brand-secondary text-3xl uppercase font-bold">
@@ -53,7 +68,7 @@ return (initialPrice*quantity).toFixed(2);
             Top
             <span
               className="absolute bottom-0 left-0 w-full border-b-2 rounded-full border-brand-primary"
-              style={{ width: '100%' }}
+              style={{ width: "100%" }}
             />
           </span>
           <span className="mx-2">Deals</span>
@@ -63,10 +78,13 @@ return (initialPrice*quantity).toFixed(2);
       <div className="flex items-center justify-center flex-wrap gap-6 mt-8 ">
         {CardData.map((deal, index) => (
           <div key={index} className="p-1 group">
-            <Card className="cursor-pointer rounded-md h-[460px] w-[295px] relative shadow-lg" onClick={()=>{openDialog(deal)}}>
+            <Card
+              className="cursor-pointer rounded-md h-[460px] w-[295px] relative shadow-lg"
+              onClick={() => {
+                openDialog(deal);
+              }}
+            >
               <CardContent className="flex flex-col justify-center mx-auto h-full p-4">
-               
-
                 <div className="flex justify-center items-center">
                   <Image
                     src={deal.img}
@@ -80,19 +98,21 @@ return (initialPrice*quantity).toFixed(2);
                   <div className="relative inline-block text-brand-secondary text-xl font-bold">
                     {deal.title}
                   </div>
-                  <div className='text-sm text-brand-secondary line-clamp-2 mt-2'>{deal.desc}</div>
-                  <div className='text-md font-bold mt-4 text-brand-secondary'>
-                  <span>RS.</span>  {deal.price}
+                  <div className="text-sm text-brand-secondary line-clamp-2 mt-2">
+                    {deal.desc}
                   </div>
-      
+                  <div className="text-md font-bold mt-4 text-brand-secondary">
+                    <span>RS.</span> {deal.price}
+                  </div>
                 </div>
-                <div className=' flex items-center justify-center mx-auto w-40'>
-                  <button className='absolute -bottom-4  bg-brand-primary hover:bg-brand-secondary hover:text-brand-primary duration-500 px-4 py-2 rounded-md text-brand-secondary text-sm font-bold'>+ Add to Bucket</button>
-
-                  </div>
-                  <div className='absolute top-4 right-4'>
-                    <Heart className="text-brand-primary"/>
-                  </div>
+                <div className=" flex items-center justify-center mx-auto w-40">
+                  <button className="absolute -bottom-4  bg-brand-primary hover:bg-brand-secondary hover:text-brand-primary duration-500 px-4 py-2 rounded-md text-brand-secondary text-sm font-bold">
+                    + Add to Bucket
+                  </button>
+                </div>
+                <div className="absolute top-4 right-4">
+                  <Heart className="text-brand-primary" />
+                </div>
               </CardContent>
             </Card>
           </div>
@@ -101,8 +121,11 @@ return (initialPrice*quantity).toFixed(2);
       {isDialogOpen && (
         <AlertDialog open={isDialogOpen} onOpenChange={closeDialog}>
           <AlertDialogContent className="lg:max-w-[800px] max-w-[350px] h-[550px] lg:h-[600px] bg-brand-darkGray border-none !rounded-3xl">
-            <AlertDialogCancel onClick={closeDialog} className="absolute top-4 right-4 bg-brand-primary border-none">
-              <X strokeWidth={4}/>
+            <AlertDialogCancel
+              onClick={closeDialog}
+              className="absolute top-4 right-4 bg-brand-primary border-none"
+            >
+              <X strokeWidth={4} />
             </AlertDialogCancel>
 
             <div className="flex justify-center lg:my-4">
@@ -140,17 +163,18 @@ return (initialPrice*quantity).toFixed(2);
                   <Plus />
                 </button>
               </div>
-             
             </div>
 
             <AlertDialogFooter>
-       <AlertDialogAction className="bg-brand-primary text-xl text-brand-secondary   lg:w-[50%] lg:h-14 h-12 flex justify-center lg:mt-2 items-center mx-auto "> <span className='mr-6'> {calculateTotalPrice()} RS</span>  Add to Bucket</AlertDialogAction>
-             
+              <AlertDialogAction className="bg-brand-primary text-xl text-brand-secondary   lg:w-[50%] lg:h-14 h-12 flex justify-center lg:mt-2 items-center mx-auto ">
+                {" "}
+                <span className="mr-6"> {calculateTotalPrice()} RS</span> Add to
+                Bucket
+              </AlertDialogAction>
             </AlertDialogFooter>
           </AlertDialogContent>
         </AlertDialog>
       )}
-
     </div>
   );
 };

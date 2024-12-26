@@ -9,19 +9,28 @@ const Footer = () => {
         <div className="container mx-auto px-4">
           {/* Logo and Social Links */}
           <div className="flex justify-center items-center space-x-14">
-            <img
+           <Link href="/">
+           <img
               src="/images/logo.png"
               alt="brand-logo"
               className="cursor-pointer w-20 h-auto"
             />
+           </Link>
+           
             <div className="flex gap-3">
-              <Link href="/" className="bg-white p-2 rounded-full text-brand-primary">
+              <Link
+                href="/"
+                className="bg-white p-2 rounded-full text-brand-primary"
+              >
                 <RiYoutubeFill className="text-3xl" />
               </Link>
               <Link href="/" className="bg-white p-2 rounded-full">
                 <RiInstagramLine className="text-3xl" />
               </Link>
-              <Link href="/" className="bg-white p-2 rounded-full text-blue-600">
+              <Link
+                href="/"
+                className="bg-white p-2 rounded-full text-blue-600"
+              >
                 <RiFacebookFill className="text-3xl" />
               </Link>
             </div>
@@ -32,7 +41,7 @@ const Footer = () => {
             <div className=" flex flex-col lg:items-center ">
               <ul className="space-y-2 text-white">
                 <li>
-                  <Link href="/" className="hover:underline">
+                  <Link href="/aboutus" className="hover:underline">
                     About Us
                   </Link>
                 </li>
@@ -42,7 +51,7 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/" className="hover:underline">
+                  <Link href="/privacypolicy" className="hover:underline">
                     Privacy Policy
                   </Link>
                 </li>
@@ -57,7 +66,7 @@ const Footer = () => {
             <div className=" flex flex-col lg:items-center align-top ">
               <ul className="space-y-2 text-white">
                 <li>
-                  <Link href="/" className="hover:underline">
+                  <Link href="/contactus" className="hover:underline">
                     Contact Us
                   </Link>
                 </li>
@@ -67,7 +76,7 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/" className="hover:underline">
+                  <Link href="/trackorder" className="hover:underline">
                     Track Order
                   </Link>
                 </li>
@@ -77,7 +86,7 @@ const Footer = () => {
             <div className=" flex flex-col lg:items-center ">
               <ul className="space-y-2 text-white">
                 <li>
-                  <Link href="/" className="hover:underline">
+                  <Link href="/termscon" className="hover:underline">
                     Terms &amp; Conditions
                   </Link>
                 </li>
@@ -104,8 +113,12 @@ const Footer = () => {
           <div className="mt-2 text-white text-md lg:px-12 flex justify-between flex-col lg:flex-row md:flex-row ">
             <p className="m-0">2024 KFC. All rights reserved</p>
             <div>
-              <h1 className="text-brand-primary font-logo font-semibold">Powered by</h1>
-              <Link href="/" className="  underline" >SimpleX Technology Solutions</Link>
+              <h1 className="text-brand-primary font-logo font-semibold">
+                Powered by
+              </h1>
+              <Link href="/" className="  underline">
+                SimpleX Technology Solutions
+              </Link>
             </div>
           </div>
         </div>

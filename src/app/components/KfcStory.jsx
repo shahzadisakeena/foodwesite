@@ -1,34 +1,34 @@
-import { Octagon } from 'lucide-react';
-import React from 'react';
+import { Octagon } from "lucide-react";
+import React from "react";
 
 const KfcStory = () => {
   const octagonsData = [
-    { year: '1890', text: 'Harland Sanders was born' },
+    { year: "1890", text: "Harland Sanders was born" },
     {
-      year: '1930',
-      text: 'Sanders Court & Cafe was opened in front of his gas station in Corbin, Kentucky',
+      year: "1930",
+      text: "Sanders Court & Cafe was opened in front of his gas station in Corbin, Kentucky",
     },
     {
-      year: '1940',
-      text: 'Colonel Sanders develops the Original Recipe from 11 secret herbs and spices',
+      year: "1940",
+      text: "Colonel Sanders develops the Original Recipe from 11 secret herbs and spices",
     },
     {
-      year: '1952',
-      text: 'The Colonel begins franchising his business traveling from town to town',
+      year: "1952",
+      text: "The Colonel begins franchising his business traveling from town to town",
     },
-    { year: '1957', text: 'Kentucky Fried Chicken is first sold in buckets' },
+    { year: "1957", text: "Kentucky Fried Chicken is first sold in buckets" },
     {
-      year: '1964',
-      text: 'More than 600 franchised outlets in the USA, Canada, and UK',
+      year: "1964",
+      text: "More than 600 franchised outlets in the USA, Canada, and UK",
     },
-    { year: '1974', text: 'KFC first launches in Kuwait' },
+    { year: "1974", text: "KFC first launches in Kuwait" },
     {
-      year: '1980',
-      text: 'Colonel Sanders passes away at the age of 90. His legacy lives on',
+      year: "1980",
+      text: "Colonel Sanders passes away at the age of 90. His legacy lives on",
     },
     {
-      year: 'Today',
-      text: 'Today we have more than 25,000 KFC restaurants in over 145 countries and territories around the world.',
+      year: "Today",
+      text: "Today we have more than 25,000 KFC restaurants in over 145 countries and territories around the world.",
     },
   ];
 

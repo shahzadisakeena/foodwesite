@@ -1,44 +1,48 @@
-"use client"
+"use client";
 
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import React, { useEffect, useRef, useState } from 'react';
-import { Dialog, DialogTrigger, DialogContent, DialogTitle } from '@/components/ui/dialog';
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import React, { useEffect, useRef, useState } from "react";
+import {
+  Dialog,
+  DialogTrigger,
+  DialogContent,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import GeocodingService from "./geocoder";
 import Image from "next/image";
 
-
 const CustomDialog = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [coords, setCoords] = useState({ lati: '33.027968', long: '73.6010478' });
-
+  const [coords, setCoords] = useState({
+    lati: "33.027968",
+    long: "73.6010478",
+  });
 
   const closeDialog = () => setIsOpen(false);
 
   const handleCoords = (newCoords) => {
-    setCoords(newCoords)
-  }
-
+    setCoords(newCoords);
+  };
 
   return (
     <div className="font-ftr">
       {/* Trigger Button */}
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
         <DialogTrigger asChild>
-          <button className='bg-brand-darkGray focus:border-brand-primary focus:border-[3px] rounded-md px-4 py-2 text-brand-secondary w-36 h-12 flex items-center justify-center space-x-2'>
+          <button className="bg-brand-darkGray focus:border-brand-primary focus:border-[3px] rounded-md px-4 py-2 text-brand-secondary w-36 h-12 flex items-center justify-center space-x-2">
             <Image
-              src='/images/Delivery.png'
-              alt='Deliver'
+              src="/images/Delivery.png"
+              alt="Deliver"
               width={30}
               height={30}
             />
-            <span className='font-bold'>DELIVERY</span>
+            <span className="font-bold">DELIVERY</span>
           </button>
         </DialogTrigger>
 
         {/* Dialog Content */}
         <DialogContent className="rounded-lg font-login bg-brand-darkGray h-[91vh] text-white">
-
           <DialogTitle></DialogTitle>
           {/* Header */}
           <div className="text-2xl text-center font-bold border-b border-white pb-2">
@@ -48,14 +52,14 @@ const CustomDialog = () => {
           {/* Body */}
           <div className="mt-4 mb-4 overflow-y-scroll">
             <div className="flex flex-col justify-center gap-4">
-
               <GeocodingService onMesageChange={handleCoords} />
               <div className="">
                 <p className="bg-brand-darkGray text-xl border-brand-secondary border-b-2 text-white">{`${coords.lati}, ${coords.long}`}</p>
               </div>
               <Button
                 disabled={!coords.lati || !coords.long}
-                className="w-full bg-brand-primary text-lg text-black hover:bg-brand-primary/90">
+                className="w-full bg-brand-primary text-lg text-black hover:bg-brand-primary/90"
+              >
                 Confirm Location
               </Button>
 
