@@ -26,6 +26,7 @@ export default function RootLayout({ children }) {
       >
         <Navbar/>
         {children}
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZZUXJEB6v7iXbsDfiq23FfrvTN2hxaXM&callback=initMap&v=weekly" defer async></script>
       </body>
     </html>
   );

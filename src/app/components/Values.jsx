@@ -11,11 +11,11 @@ const Values = () => {
     { image: '/images/team.png', title: "Work as a Team", desc: "We help and support each other to grow and achieve more. We benefit from healthy debate to get the best outcomes. We win together as the KFC family!" }
   ]
   return (
-    <div className=' container flex flex-col items-center justify-center h-full mx-auto'>
+    <div className=' container flex flex-col items-center w-[81vw] justify-center h-full mx-auto'>
       <h2 className='text-[41px] text-brand-secondary font-bold lg:mt-28 mt-32'>Our Values</h2>
       <div className=' w-full grid lg:grid-cols-3 md:grid-cols-3 grid-cols-1 gap-6 mx-auto mt-10'>
         {data.map((d, index) => (
-          <div className="value w-full flex flex-col flex-shrink gap-5 mb-12">
+          <div key={index} className={`value text-brand-secondary w-full flex flex-col flex-shrink gap-5 mb-12`}>
             <img src={d.image} className='w-full object-contain' />
             <p className=' text-[32px] w-full' >{d.title}</p>
             <p className='text-[16px] font-ftr'>{d.desc}</p>
