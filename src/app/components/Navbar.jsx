@@ -32,7 +32,7 @@ const Navbar = () => {
       path: "/trackorder",
       icon: <PackageSearch size={20} />,
     },
-    { name: "Explore Menu", path: "#", icon: <Logs size={20} /> },
+    { name: "Explore Menu", path: "/menu", icon: <Logs size={20} /> },
   ];
   return (
     <nav className="fixed top-0 left-0 z-50 shadow-md bg-brand-accent lg:h-24 w-full lg:flex items-center py-2 lg:py-0 ">

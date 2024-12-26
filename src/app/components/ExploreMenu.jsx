@@ -11,13 +11,13 @@ import Image from "next/image";
 import Link from "next/link";
 const ExploreMenu = () => {
   const CardSlide = [
-    { img: "/images/cat1.png", title: "food" },
-    { img: "/images/cat2.png", title: "food" },
-    { img: "/images/cat3.png", title: "food" },
-    { img: "/images/cat4.png", title: "food" },
-    { img: "/images/cat5.png", title: "food" },
-    { img: "/images/cat6.png", title: "food" },
-    { img: "/images/cat7.png", title: "food" },
+    { img: "/images/cat1.png", title: "Everyday Value" },
+    { img: "/images/cat2.png", title: "Ala-Carte-&-Combos" },
+    { img: "/images/cat3.png", title: "Promotion" },
+    { img: "/images/cat4.png", title: "Signature-Boxes" },
+    { img: "/images/cat5.png", title: "Sharing" },
+    { img: "/images/cat6.png", title: "Snacks-&-Beverages" },
+    { img: "/images/cat7.png", title: "Midnight(start at 12am)" },
   ];
 
   return (

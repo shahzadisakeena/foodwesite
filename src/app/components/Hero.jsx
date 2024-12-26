@@ -15,6 +15,15 @@ const Hero = () => {
     { id: 2, url: "/images/slider2.jpg", alt: "Slide 2" },
     { id: 3, url: "/images/slider3.jpg", alt: "Slide 3" },
   ];
+   // Function to navigate to the previous slide
+   const scrollPrev = () => {
+    if (emblaApi) emblaApi.scrollPrev();
+  };
+
+  // Function to navigate to the next slide
+  const scrollNext = () => {
+    if (emblaApi) emblaApi.scrollNext();
+  };
   return (
     <div className="relative w-full h-full mt-20 bg-brand-accent">
       {/* Carousel */}
