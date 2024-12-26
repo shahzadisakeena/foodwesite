@@ -7,36 +7,24 @@ const GeocodingService = ({onMesageChange}) => {
   const [marker, setMarker] = useState(null)
   const [geocoder, setGeocoder] = useState(null)
   const [inputValue, setInputValue] = useState('')
-  const [latLng, setLatLng] = useState({ lati: '', long: '' })
+  const [coords, setCoords] = useState({ lati: '', long: '' })
 
   useEffect(() => {
     const loadGoogleMapsAPI = () => {
-      if (window.google && window.google.maps) {
-        // If API is already loaded, initialize the map
-        initializeMap()
-      } else {
-        // If not loaded, create and append script
-        const script = document.createElement('script')
-        script.src =
-          'https://maps.googleapis.com/maps/api/js?key=AIzaSyAZZUXJEB6v7iXbsDfiq23FfrvTN2hxaXM&callback=initMap&v=weekly'
-        script.defer = true
-        script.async = true
-        document.body.appendChild(script)
-
-        // Attach initMap to window for callback
-        window.initMap = initializeMap
+      if (window.google) {
+        initializeMap(); // If already loaded, initialize the map
       }
-    }
-
-    loadGoogleMapsAPI()
-
+    };
+  
+    loadGoogleMapsAPI();
+  
     return () => {
-      // Cleanup: Prevent duplicate listeners and potential memory leaks
-      if (window.initMap) {
-        delete window.initMap
-      }
-    }
-  }, [])
+      // Cleanup: Remove the script if necessary
+      const existingScript = document.querySelector(`script[src*="maps.googleapis.com"]`);
+      if (existingScript) existingScript.remove();
+    };
+  }, []);
+  
 
   const initializeMap = () => {
     const defaultLocation = { lat: 33.027968, lng: 73.6010478 }
@@ -81,7 +69,8 @@ const GeocodingService = ({onMesageChange}) => {
     }
 
     // Add map click listener to update marker
-    mapInstance.addListener('click', e => {
+    mapInstance.addListener('click', async (e) => {
+      await handleGeocode({ location: e.latLng })
       const position = e.latLng
       markerInstance.setPosition(position)
       mapInstance.setCenter(position)
@@ -90,14 +79,14 @@ const GeocodingService = ({onMesageChange}) => {
         lati: position.lat().toString(),
         long: position.lng().toString()
     };
-    setLatLng(newLatLng);
+    setCoords(newLatLng);
     onMesageChange(newLatLng); // Updated to use newLatLng
     
       
     })
   }
 
-  const handleGeocode = async request => {
+  const handleGeocode = async (request) => {
     if (!geocoder || !map || !marker) return
 
     try {
@@ -131,12 +120,12 @@ const GeocodingService = ({onMesageChange}) => {
     }
   }
 
-  // Optional: Log latLng when it updates
+  // Optional: Log coords when it updates
   useEffect(() => {
-    if (latLng.lati && latLng.long) {
-      console.log('Updated latLng:', latLng)
+    if (coords.lati && coords.long) {
+      console.log('Updated coords:', coords)
     }
-  }, [latLng])
+  }, [coords])
 
   return (
     <div className='relative flex justify-center'>

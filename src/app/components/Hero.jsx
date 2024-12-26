@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useRef } from 'react';
+import React, { useCallback, useRef } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
@@ -9,7 +9,11 @@ const Hero = () => {
   const autoplay = useRef(
     Autoplay({ delay: 2000, stopOnInteraction: true })
   );
-  const [emblaRef] = useEmblaCarousel({ loop: true }, [autoplay.current]);
+  const [emblaRef,emblaApi] = useEmblaCarousel({ loop: true }, [autoplay.current]);
+
+  const scrollPrev = useCallback(() => emblaApi && emblaApi.scrollPrev(), [emblaApi]);
+  const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi]);
+
   const slides = [
     { id: 1, url: '/images/slider1.jpg', alt: 'Slide 1' },
     { id: 2, url: '/images/slider2.jpg', alt: 'Slide 2' },
@@ -46,13 +50,13 @@ loading='eager'
       {/* Navigation */}
       <button
         className="absolute flex items-center justify-center top-1/2 left-4 transform -translate-y-1/2 text-white bg-brand-primary p-2 rounded-full cursor-pointer"
-        onClick={() => autoplay.current.embla.scrollPrev()}
+        onClick={scrollPrev}
       >
         <ChevronLeft/>
       </button>
       <button
         className="absolute top-1/2 right-4 transform -translate-y-1/2 text-white bg-brand-primary p-2 rounded-full cursor-pointer"
-        onClick={() => autoplay.current.embla.scrollNext()}
+        onClick={scrollNext}
       >
         <ChevronRight/>
       </button>

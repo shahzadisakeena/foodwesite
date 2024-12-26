@@ -2,9 +2,10 @@
 
 import { Button } from "@/components/ui/button"
 import React, { useState } from 'react';
-import { Dialog, DialogTrigger, DialogContent, DialogTitle } from '@/components/ui/dialog';
+import { Dialog, DialogTrigger, DialogContent, DialogTitle, DialogHeader, DialogDescription } from '@/components/ui/dialog';
 import GeocodingService from "./geocoder";
 import Image from "next/image";
+DialogDescription
 
 
 const CustomDialog = () => {
@@ -38,7 +39,11 @@ const CustomDialog = () => {
         {/* Dialog Content */}
         <DialogContent className="rounded-lg font-login bg-brand-darkGray h-[91vh] text-white">
 
-          <DialogTitle></DialogTitle>
+          <DialogHeader>
+            <DialogTitle></DialogTitle>
+            <DialogDescription>
+            </DialogDescription>
+          </DialogHeader>
           {/* Header */}
           <div className="text-2xl text-center font-bold border-b border-white pb-2">
             Select Your Delivery Location
