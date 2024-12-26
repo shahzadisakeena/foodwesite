@@ -1,16 +1,12 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import React, { useEffect, useRef, useState } from "react";
-import {
-  Dialog,
-  DialogTrigger,
-  DialogContent,
-  DialogTitle,
-} from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import React, { useEffect, useRef, useState } from 'react';
+import { Dialog, DialogTrigger, DialogContent, DialogTitle } from '@/components/ui/dialog';
 import GeocodingService from "./geocoder";
 import Image from "next/image";
+
 
 const CustomDialog = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -43,6 +39,7 @@ const CustomDialog = () => {
 
         {/* Dialog Content */}
         <DialogContent className="rounded-lg font-login bg-brand-darkGray h-[91vh] text-white">
+
           <DialogTitle></DialogTitle>
           {/* Header */}
           <div className="text-2xl text-center font-bold border-b border-white pb-2">
