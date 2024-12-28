@@ -23,7 +23,7 @@ const Navbar = () => {
     { name: "Privacy Policy", path: "/privacypolicy" },
     { name: "Contact Us", path: "/contactus" },
     { name: "Mitao Bhook", path: "#" },
-    { name: "Careers", path: "#" },
+    { name: "Careers", path: "/careers-page" },
   ];
   const expOptions = [
     { name: "Store Locator", path: "#", icon: <MapPinHouse size={20} /> },
@@ -45,7 +45,7 @@ const Navbar = () => {
                 className="text-brand-secondary lg:mx-5"
               />
             </SheetTrigger>
-            <SheetContent>
+            <SheetContent className="overflow-y-scroll font-login">
               <div className=" p-3">
                 <button className="bg-brand-primary px-3 py-3 rounded-md text-brand-secondary font-semibold ">
                   LOGIN
