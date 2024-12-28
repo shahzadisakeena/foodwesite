@@ -45,7 +45,7 @@ const Navbar = () => {
                 className="text-brand-secondary lg:mx-5"
               />
             </SheetTrigger>
-            <SheetContent className="overflow-y-scroll font-login">
+            <SheetContent className="overflow-auto font-login">
               <div className=" p-3">
                 <button className="bg-brand-primary px-3 py-3 rounded-md text-brand-secondary font-semibold ">
                   LOGIN
