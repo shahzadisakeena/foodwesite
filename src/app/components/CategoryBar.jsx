@@ -54,21 +54,35 @@ const CategoryBar = ({ categories }) => {
   }, [categories]);
 
   return (
-    <div className="flex items-center justify-center w-full gap-4 p-4 bg-brand-accent fixed z-10 top-24 left-0">
-      {categories.map((category) => (
-        <a
-          key={category}
-          href={`#${category}`}
-          onClick={(e) => handleCategoryClick(e, category)} // Handle click with smooth scroll
-          className={`px-3 py-3 rounded-lg font-bold text-sm ${
-            activeCategory === category
-              ? "bg-brand-primary text-white"
-              : "text-brand-secondary bg-brand-lgInp"
-          }`}
-        >
-          {category.replace("-", " ").toUpperCase()}
-        </a>
-      ))}
+    <div className="fixed z-10 lg:top-24 top-32 left-0 w-full bg-brand-accent p-4">
+      <div
+        className="flex items-center lg:justify-center justify-start gap-4 overflow-x-auto whitespace-nowrap px-4"
+        style={{
+          scrollbarWidth: "none", // For Firefox
+          msOverflowStyle: "none", // For IE and Edge
+        }}
+      >
+        <style jsx>{`
+          /* Hide scrollbar for WebKit-based browsers */
+          div::-webkit-scrollbar {
+            display: none;
+          }
+        `}</style>
+        {categories.map((category) => (
+          <a
+            key={category}
+            href={`#${category}`}
+            onClick={(e) => handleCategoryClick(e, category)} // Handle click with smooth scroll
+            className={`lg:px-3 lg:py-3 px-2 py-2 rounded-lg font-bold text-xs lg:text-sm ${
+              activeCategory === category
+                ? "bg-brand-primary text-white"
+                : "text-brand-secondary bg-brand-lgInp"
+            }`}
+          >
+            {category.replace("-", " ").toUpperCase()}
+          </a>
+        ))}
+      </div>
     </div>
   );
 };

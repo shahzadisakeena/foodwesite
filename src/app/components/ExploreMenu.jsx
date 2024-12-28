@@ -45,22 +45,22 @@ const ExploreMenu = () => {
             >
               <div className="p-1">
                 <Link href="/menu">
-                  <Card className="cursor-pointer rounded-full w-[210px] h-[210px]">
+                  <Card className="cursor-pointer rounded-full w-[220px] h-[220px]">
                     <CardContent className="flex flex-col mx-auto aspect-square items-center justify-center h-full p-2">
                       {/* Use Next.js Image component for optimized images */}
                       <div className="flex justify-center ">
                         <Image
                           src={slide.img}
                           alt={`Card ${slide.title}`}
-                          width={180} // Set width for the image
-                          height={180} // Set height for the image
+                          width={160} // Set width for the image
+                          height={160} // Set height for the image
                           className="object-cover rounded-lg"
                         />
                       </div>
 
                       {/* Title container */}
                       <div className="flex items-center  justify-center w-full">
-                        <div className="text-center relative inline-block text-brand-secondary text-xl font-semibold">
+                        <div className="text-center relative inline-block text-brand-secondary text-lg font-semibold">
                           {slide.title}
                         </div>
                       </div>
