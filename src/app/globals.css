@@ -121,3 +121,9 @@ body {
 #dob::-webkit-calendar-picker-indicator:hover, #cnicExp::-webkit-calendar-picker-indicator:hover {
   background-color: #410e0d3d;
 }
+#dob::-webkit-datetime-edit-text{
+  display: none;
+}
+#dob::-webkit-datetime-edit{
+  text-transform: uppercase;
+}
