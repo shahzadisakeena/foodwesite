@@ -1,8 +1,7 @@
 "use client"
-import React, { useState } from 'react'
-import { TextField, MenuItem, InputAdornment, Typography, createTheme, ThemeProvider } from '@mui/material';
-import { MapPin, User } from 'lucide-react';
-
+import React, { use, useEffect, useState } from 'react'
+import { TextField, MenuItem, InputAdornment, Typography, createTheme, ThemeProvider, FormGroup, FormControlLabel, Checkbox } from '@mui/material';
+import { RiBriefcaseLine, RiMapPin2Fill, RiStarFill, RiUser3Fill } from 'react-icons/ri';
 
 const theme = createTheme({
   components: {
@@ -93,10 +92,30 @@ const Careers = () => {
   const [country, setCountry] = useState("");
   const [province, setProvince] = useState("");
   const [city, setCity] = useState("");
+  const [refer, setRefer] = useState("");
+  const [cityApply, setCityApply] = useState("");
+  const [position, setPosition] = useState("");
+  const [shift, setShift] = useState("");
+  const [employment, setEmployment] = useState("");
+  const [degree, setDegree] = useState("");
+  const [majors, setMajors] = useState("");
+  const [qualificationYear, setQualificationYear] = useState("");
+  const [pot, setPot] = useState("");
+  const [totalYearsOfExperience, setTotalYearsOfExperience] = useState("");
+  const [recentPosition, setRecentPosition] = useState("");
+  const [recentCompany, setRecentCompany] = useState("");
+  const [Values, setValues] = useState(false);
 
-
-
+  const [checked, setChecked] = useState(false);
   const [error, setError] = useState(false);
+
+  useEffect(() => { cke() }, [checked])
+
+  const cke = () => {
+    if (name != "" && dob != "" && cob != "" && ciob != "" && cnic != "" && cnicExp != "" && maritalStatus != "" && gender != "" && religion != "" && disability != "" && phoneNumber != "" && address != "" && country != "" && province != "" && city != "" && refer != "" && cityApply != "" && position != "" && shift != "" && employment != "" && degree != "" && majors != "" && qualificationYear != "" && pot != "" && totalYearsOfExperience != "" && recentPosition != "" && recentCompany) {
+      setValues(true)
+    }
+  }
 
   const stdfu = () => {
     console.log(name, dob, cob, ciob, cnic, cnicExp, maritalStatus, gender)
@@ -106,14 +125,14 @@ const Careers = () => {
     <>
       <div className="flex flex-col mt-10 h-full w-[85vw] mx-auto">
         <div className="flex items-center justify-center my-6">
-          <h2 className='text-[41px] text-brand-secondary font-bold'>Careers</h2>
+          <h2 className='text-[42px] text-brand-secondary font-bold'>Careers</h2>
         </div>
       </div>
-      <div className="w-full text-brand-secondary mx-auto mb-5">
-        <div className="flex flex-wrap justify-around">
+      <div className="container text-brand-secondary mx-auto mb-5">
+        <div className="flex flex-wrap p-2 justify-around">
           <div className="w-full  md:w-2/3">
             <h5 className="text-[26px] font-semibold flex items-center">
-              <User fill='white' />&nbsp;&nbsp;Personnel Info
+              <RiUser3Fill fill='white' />&nbsp;&nbsp;Personnel Info
             </h5>
             <ThemeProvider theme={theme}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-9">
@@ -122,6 +141,7 @@ const Careers = () => {
                   label="FULL NAME "
                   variant="filled"
                   name="name"
+                  format="DD MM YYYY"
                   fullWidth
                   required
                   value={name}
@@ -290,7 +310,7 @@ const Careers = () => {
           </div>
           <div className="w-full  md:w-2/3">
             <h5 className="text-[26px] font-semibold flex items-center">
-              <MapPin />&nbsp;&nbsp;Address
+              <RiMapPin2Fill />&nbsp;&nbsp;Address
             </h5>
             <ThemeProvider theme={theme}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-9">
@@ -390,6 +410,236 @@ const Careers = () => {
                 />
               </div>
             </ThemeProvider>
+          </div>
+          <div className="w-full  md:w-2/3">
+            <h5 className="text-[26px] font-semibold flex items-center">
+              <RiBriefcaseLine />&nbsp;&nbsp;Job Posting
+            </h5>
+            <ThemeProvider theme={theme}>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-9">
+                <TextField
+                  id='refer'
+                  label="How were you refered to us? "
+                  variant="filled"
+                  name="refer"
+                  fullWidth
+                  required
+                  value={refer}
+                  onChange={(e) => {
+                    const value = e.target.value;
+                    setRefer(value);
+                  }}
+                />
+
+                <TextField
+                  id='cityApply'
+                  label="City Applying For "
+                  variant="filled"
+                  name="cityApply"
+                  fullWidth
+                  required
+                  value={cityApply}
+                  onChange={(e) => {
+                    const value = e.target.value;
+                    setCityApply(value);
+                  }}
+                />
+
+                <TextField
+                  id='position'
+                  label="Position You are Applying For "
+                  variant="filled"
+                  name="position"
+                  fullWidth
+                  required
+                  value={position}
+                  onChange={(e) => {
+                    const value = e.target.value;
+                    setPosition(value);
+                  }}
+                />
+
+                <TextField
+                  id='shift'
+                  label="Type of Shift (Only for instore) "
+                  variant="filled"
+                  name="shift"
+                  fullWidth
+                  required
+                  value={shift}
+                  onChange={(e) => {
+                    const value = e.target.value;
+                    setShift(value);
+                  }}
+                />
+
+                <TextField
+                  id='employment'
+                  label="Type of Employement (Only for instore) "
+                  variant="filled"
+                  name="employment"
+                  fullWidth
+                  required
+                  value={employment}
+                  onChange={(e) => {
+                    const value = e.target.value;
+                    setEmployment(value);
+                  }}
+                />
+              </div>
+            </ThemeProvider>
+          </div>
+          <div className="w-full  md:w-2/3">
+            <h5 className="text-[26px] font-semibold flex items-center">
+              Qualification
+            </h5>
+            <ThemeProvider theme={theme}>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-9">
+                <TextField
+                  id='degree'
+                  label="Degree "
+                  variant="filled"
+                  name="degree"
+                  fullWidth
+                  required
+                  value={degree}
+                  onChange={(e) => {
+                    const value = e.target.value;
+                    setDegree(value);
+                  }}
+                />
+
+                <TextField
+                  id='majors'
+                  label="Majors "
+                  variant="filled"
+                  name="majors"
+                  fullWidth
+                  required
+                  value={majors}
+                  onChange={(e) => {
+                    const value = e.target.value;
+                    setMajors(value);
+                  }}
+                />
+
+                <TextField
+                  id='quailficationYear'
+                  label="Qualification Year "
+                  variant="filled"
+                  name="quailficationYear"
+                  fullWidth
+                  required
+                  value={qualificationYear}
+                  onChange={(e) => {
+                    const value = e.target.value;
+                    setQualificationYear(value);
+                  }}
+                />
+
+                <TextField
+                  id='pot'
+                  label="Place of Tuition "
+                  variant="filled"
+                  name="pot"
+                  fullWidth
+                  required
+                  value={pot}
+                  onChange={(e) => {
+                    const value = e.target.value;
+                    setPot(value);
+                  }}
+                />
+              </div>
+            </ThemeProvider>
+          </div>
+          <div className="w-full  md:w-2/3">
+            <h5 className="text-[26px] font-semibold flex items-center">
+              <RiStarFill />&nbsp;&nbsp;Experience
+            </h5>
+            <ThemeProvider theme={theme}>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-9">
+                <TextField
+                  id='totalYearsOfExperience'
+                  label="Total Years of Experience "
+                  variant="filled"
+                  name="totalYearsOfExperience"
+                  fullWidth
+                  required
+                  value={totalYearsOfExperience}
+                  onChange={(e) => {
+                    const value = e.target.value;
+                    if (/^[\d.]*$/.test(value)) {
+                      setTotalYearsOfExperience(value);
+                    }
+                  }}
+                />
+
+                <TextField
+                  id='recentPosition'
+                  label="Recent Position "
+                  variant="filled"
+                  name="recentPosition"
+                  fullWidth
+                  required
+                  value={recentPosition}
+                  onChange={(e) => {
+                    const value = e.target.value;
+                    setRecentPosition(value);
+                  }}
+                />
+
+                <TextField
+                  id='recentCompany'
+                  label="Recent Company "
+                  variant="filled"
+                  name="recentCompany"
+                  fullWidth
+                  required
+                  value={recentCompany}
+                  onChange={(e) => {
+                    const value = e.target.value;
+                    setRecentCompany(value);
+                  }}
+                />
+              </div>
+            </ThemeProvider>
+          </div>
+          <div className="w-full  md:w-2/3">
+            <h5 className="text-[42px] font-semibold flex justify-center items-center">
+              Applicant agreement
+            </h5>
+            <p className="font-ftr my-9">
+              I certify that all information provided in this application is true and complete. I understand that any false information or omission may disqualify me from further consideration for employment and may result in my dismissal If discovered at a later date. I authorize and agree to cooperate in a thorough investigation of all statements made herein and other matters relating to my background and qualification. I understand that any investigation conducted may include a request for employment, educational and criminal history. I authorize any person, school, current and former employer, consumer reporting agency and any other organization or agency to provide information relevant to such investigation and I hereby release all persons and corporations requesting or supplying information pursuant to such investigation from all liability or responsibility to me for doing so. I understand that I have the right to make a written request within a reasonable period of time for complete disclosure of the nature and scope of any investigation. I further authorize any physician or hospital to release any information which may be necessary to determine my ability to perform the job for which I am being considered or any future job in the event that I am hired. I UNDERSTAND THAT THIS APPLICATION OR SUBSEQUENT EMPLOYMENT DOES NOT CREATE A CONTRACT OF EMPLOYMENT NOR GUARANTEE EMPLOYMENT FOR ANY DEFINITE PERIOD OF TIME.
+            </p>
+          </div>
+          <div className="w-full flex flex-col  md:w-2/3">
+            <FormGroup>
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={checked}
+                    onChange={(event) => {
+                      setChecked(event.target.checked);
+                    }}
+                    sx={{
+                      color: "#D71A28",
+                      "&.Mui-checked": {
+                        color: "#D71A28"
+                      }
+                    }}
+                    inputProps={{ 'aria-label': 'controlled' }}
+                  />
+                }
+                label={
+                  <Typography variant="body1" style={{ color: 'white' }}>
+                    Sign up now to avail exclusive rewards &amp; discounts
+                  </Typography>
+                }
+                labelPlacement="end"
+              />
+            </FormGroup>
+            <button className={` rounded-lg text-[14px] font-lgbtn w-80 p-2 ${!Values ? "!bg-brand-inpnot cursor-not-allowed" : "bg-brand-primary cursor-pointer"} mx-auto`} disabled={!Values} onClick={stdfu}>APPLY</button>
           </div>
           {/* <button onClick={stdfu}>hdjhfjh</button> */}
         </div>
