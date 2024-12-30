@@ -1,6 +1,7 @@
 import React from 'react'
 import Values from '../components/Values'
 import Careers from '../components/Careers'
+import Footer from '../components/Footer'
 
 
 
@@ -9,6 +10,7 @@ const page = () => {
     <div className='font-login'>
       <Values />
       <Careers />
+      <Footer />
     </div>
   )
 }
