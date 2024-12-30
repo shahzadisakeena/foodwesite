@@ -43,7 +43,7 @@ return(initialPrice*quantity).toFixed(2)
     <div className="flex flex-wrap gap-6 justify-center">
       {items.map((item) => (
         <div key={item.id} className="p-1 group">
-          <Card className="rounded-md cursor-pointer h-[420px] w-[265px] relative shadow-lg"
+          <Card className="rounded-md cursor-pointer h-[418px] w-[265px] relative shadow-lg"
           onClick={()=>openDialog(item)}
           >
             <CardContent className="flex flex-col justify-center mx-auto h-full p-4">
