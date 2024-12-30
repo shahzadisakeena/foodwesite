@@ -31,10 +31,10 @@ setSelectedItem(null)
 setIsDialogOpen(false);
 }
 const incrementQuantity =()=>{
-setQuantity((prev)=>(prev>1?prev+1:1))
+setQuantity((prev)=>(prev + 1))
 }
 const decrementQuantity = () =>{
-setQuantity((prev)=>(prev>1?prev-1:1))
+setQuantity((prev)=>(prev > 1 ? prev - 1 : 1))
 }
 const calculateTotalPrice = ()=>{
 return(initialPrice*quantity).toFixed(2)
@@ -60,7 +60,7 @@ return(initialPrice*quantity).toFixed(2)
                 <div className="text-xl font-bold text-brand-secondary">{item.name}</div>
                 <div className="text-md mt-1 line-clamp-1 text-brand-secondary">{item.description}</div>
                 <div className="text-xl font-bold text-brand-secondary mt-2">
-                   {item.price}
+                 <span className='text-lg'>RS</span>  {item.price}
                 </div>
               </div>
               <div className="flex justify-center mt-3 ">
