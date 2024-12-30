@@ -8,6 +8,11 @@ html {
   scroll-behavior: smooth;
 }
 
+*{
+  scrollbar-width: thin; /* Options: auto, thin, none */
+  scrollbar-color: #333332 transparent; /* thumb color and track color */
+}
+
 body {
     background-color: #000000;
     margin: 0;
@@ -94,14 +99,32 @@ body {
   font-family: "National2Medium";
   src: url("/fonts/TestNational2-Medium.otf") format("opentype");
 }
-::-webkit-scrollbar {
-  width: 5px;
+
+#dob::-webkit-calendar-picker-indicator, #cnicExp::-webkit-calendar-picker-indicator, #cnicExp::-webkit-calendar {
+  filter: invert(23%) sepia(96%) saturate(7496%) hue-rotate(0deg);
+  transform: scale(1.6);
+  /* height: 30px;
+  width: 30px; */
+  padding-top: 5px;
+  padding-bottom: 15px;
+  padding-left: 10px;
+  padding-right: 15px;
+}
+#dob::-webkit-calendar-picker-indicator:hover, #cnicExp::-webkit-calendar-picker-indicator:hover {
+  background-color: #410e0d3d;
+}
+#dob::-webkit-datetime-edit-text,#cnicExp::-webkit-datetime-edit-text{
+  display: none;
+}
+#dob::-webkit-datetime-edit,#cnicExp::-webkit-datetime-edit{
+  text-transform: uppercase;
 }
 
-::-webkit-scrollbar-track {
-  background: transparent; 
-}
-
-::-webkit-scrollbar-thumb {
-  background: #333332;
+#dob::-webkit-datetime-edit-year-field:hover,
+#dob::-webkit-datetime-edit-month-field:hover,
+#dob::-webkit-datetime-edit-day-field:hover,
+#cnicExp::-webkit-datetime-edit-year-field:hover,
+#cnicExp::-webkit-datetime-edit-month-field:hover,
+#cnicExp::-webkit-datetime-edit-day-field:hover {
+  background-color: #410e0d45;
 }
