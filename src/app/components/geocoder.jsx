@@ -1,42 +1,33 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
+import axios from "axios";
 
-const GeocodingService = ({onMesageChange}) => {
-  const mapRef = useRef(null)
-  const [map, setMap] = useState(null)
-  const [marker, setMarker] = useState(null)
-  const [geocoder, setGeocoder] = useState(null)
-  const [inputValue, setInputValue] = useState('')
-  const [latLng, setLatLng] = useState({ lati: '', long: '' })
+const GeocodingService = ({ onMesageChange }) => {
+  const mapRef = useRef(null);
+  const [map, setMap] = useState(null);
+  const [marker, setMarker] = useState(null);
+  const [inputValue, setInputValue] = useState("");
+  const [latLng, setLatLng] = useState({ lati: "", long: "" });
 
   useEffect(() => {
     const loadGoogleMapsAPI = () => {
       if (window.google && window.google.maps) {
-        // If API is already loaded, initialize the map
-        initializeMap()
+        initializeMap();
       } else {
-        // If not loaded, create and append script
-        const script = document.createElement('script')
-        script.src =
-          'https://maps.googleapis.com/maps/api/js?key=AIzaSyAZZUXJEB6v7iXbsDfiq23FfrvTN2hxaXM&callback=initMap&v=weekly'
-        script.defer = true
-        script.async = true
-        document.body.appendChild(script)
+        
 
-        // Attach initMap to window for callback
-        window.initMap = initializeMap
+        window.initMap = initializeMap;
       }
-    }
+    };
 
-    loadGoogleMapsAPI()
+    loadGoogleMapsAPI();
 
     return () => {
-      // Cleanup: Prevent duplicate listeners and potential memory leaks
       if (window.initMap) {
-        delete window.initMap
+        delete window.initMap;
       }
-    }
-  }, [])
+    };
+  }, []);
 
   const initializeMap = () => {
     const defaultLocation = { lat: 33.027968, lng: 73.6010478 };
@@ -49,17 +40,14 @@ const GeocodingService = ({onMesageChange}) => {
       fullscreenControl: false,
     });
 
-    const geocoderInstance = new google.maps.Geocoder();
     const markerInstance = new google.maps.Marker({
       position: defaultLocation,
       map: mapInstance,
     });
 
     setMap(mapInstance);
-    setGeocoder(geocoderInstance);
     setMarker(markerInstance);
 
-    // Try to get user's current location
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         (position) => {
@@ -71,9 +59,7 @@ const GeocodingService = ({onMesageChange}) => {
           markerInstance.setPosition(userLocation);
         },
         () => {
-          console.warn(
-            "Geolocation failed. Defaulting to predefined location."
-          );
+          console.warn("Geolocation failed. Defaulting to predefined location.");
         }
       );
     } else {
@@ -82,63 +68,80 @@ const GeocodingService = ({onMesageChange}) => {
       );
     }
 
-    // Add map click listener to update marker
-    mapInstance.addListener('click', e => {
-      const position = e.latLng
-      markerInstance.setPosition(position)
-      mapInstance.setCenter(position)
-      
-      const newLatLng = {
-        lati: position.lat().toString(),
-        long: position.lng().toString()
-    };
-    setLatLng(newLatLng);
-    onMesageChange(newLatLng); // Updated to use newLatLng
-    
-      
-    })
-  }
+    mapInstance.addListener("click", async (e) => {
+      const position = e.latLng;
+      markerInstance.setPosition(position);
+      mapInstance.setCenter(position);
 
-  const handleGeocode = async request => {
-    if (!geocoder || !map || !marker) return
+      // Reverse Geocode
+      try {
+        const API_KEY = "AIzaSyAZZUXJEB6v7iXbsDfiq23FfrvTN2hxaXM";
+        const GEOCODE_API_URL = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${position.lat()},${position.lng()}&key=${API_KEY}`;
 
-    try {
-      const result = await geocoder.geocode(request);
-      const { results } = result;
+        const response = await axios.get(GEOCODE_API_URL);
+        const { results } = response.data;
 
-      if (results.length > 0) {
-        const location = results[0].geometry.location;
-        map.setCenter(location);
-        marker.setPosition(location);
-        console.log(
-          "Geocode results:",
-          results[0].formatted_address,
-          location.toString()
+        if (results.length > 0) {
+          const address = results[0].formatted_address;
+
+          const newLatLng = {
+            lati: position.lat().toString(),
+            long: position.lng().toString(),
+            add: address
+          };
+          setLatLng(newLatLng);
+          onMesageChange(newLatLng);
+        } else {
+          alert("No address found for this location.");
+        }
+      } catch (error) {
+        alert(
+          "Reverse Geocoding was not successful for the following reason: " +
+            error.message
         );
-      } else {
-        alert("No results found.");
       }
-    } catch (error) {
-      alert(
-        "Geocode was not successful for the following reason: " + error.message
-      );
-    }
+    });
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (inputValue) {
-      handleGeocode({ address: inputValue });
+      try {
+        const API_KEY = "AIzaSyAZZUXJEB6v7iXbsDfiq23FfrvTN2hxaXM";
+        const GEOCODE_API_URL = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(
+          inputValue
+        )}&key=${API_KEY}`;
+
+        const response = await axios.get(GEOCODE_API_URL);
+        const { results } = response.data;
+
+        if (results.length > 0) {
+          const location = results[0].geometry.location;
+          map.setCenter(location);
+          marker.setPosition(location);
+          setLatLng({
+            lati: location.lat.toString(),
+            long: location.lng.toString(),
+          });
+          console.log("Geocode results:", results[0].formatted_address, location);
+        } else {
+          alert("No results found.");
+        }
+      } catch (error) {
+        alert(
+          "Geocode was not successful for the following reason: " +
+            error.message
+        );
+      }
     } else {
       alert("Please enter a location.");
     }
   };
 
-  // Optional: Log coords when it updates
   useEffect(() => {
     if (latLng.lati && latLng.long) {
-      console.log('Updated latLng:', latLng)
+      console.log("Updated latLng:", latLng);
     }
-  }, [latLng])
+  }, [latLng]);
 
   return (
     <div className="relative flex justify-center">
@@ -170,7 +173,6 @@ const GeocodingService = ({onMesageChange}) => {
           Geocode
         </button>
       </div>
-      {/* Map Container */}
       <div
         id="map"
         ref={mapRef}

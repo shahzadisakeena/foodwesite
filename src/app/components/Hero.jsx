@@ -9,7 +9,7 @@ const Hero = () => {
   const autoplay = useRef(
     Autoplay({ delay: 2000, stopOnInteraction: true })
   );
-  const [emblaRef] = useEmblaCarousel({ loop: true }, [autoplay.current]);
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [autoplay.current]);
   const slides = [
     { id: 1, url: "/images/slider1.jpg", alt: "Slide 1" },
     { id: 2, url: "/images/slider2.jpg", alt: "Slide 2" },

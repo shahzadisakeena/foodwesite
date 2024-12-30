@@ -1,8 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useState } from 'react';
 import { Dialog, DialogTrigger, DialogContent, DialogTitle } from '@/components/ui/dialog';
 import GeocodingService from "./geocoder";
 import Image from "next/image";
@@ -13,6 +12,7 @@ const CustomDialog = () => {
   const [coords, setCoords] = useState({
     lati: "33.027968",
     long: "73.6010478",
+    add: 'Dina, Jhelum'
   });
 
   const closeDialog = () => setIsOpen(false);
@@ -51,7 +51,7 @@ const CustomDialog = () => {
             <div className="flex flex-col justify-center gap-4">
               <GeocodingService onMesageChange={handleCoords} />
               <div className="">
-                <p className="bg-brand-darkGray text-xl border-brand-secondary border-b-2 text-white">{`${coords.lati}, ${coords.long}`}</p>
+                <p className="bg-brand-darkGray text-xl border-brand-secondary border-b-2 text-white">{`${coords.add}`}</p>
               </div>
               <Button
                 disabled={!coords.lati || !coords.long}
