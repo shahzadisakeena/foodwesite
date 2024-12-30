@@ -106,6 +106,7 @@ const Careers = () => {
   const [recentCompany, setRecentCompany] = useState("");
   const [Values, setValues] = useState(false);
 
+
   const [checked, setChecked] = useState(false);
   const [error, setError] = useState(false);
 
@@ -639,7 +640,7 @@ const Careers = () => {
                 labelPlacement="end"
               />
             </FormGroup>
-            <button className={` rounded-lg text-[14px] font-lgbtn w-80 p-2 ${!Values ? "!bg-brand-inpnot cursor-not-allowed" : "bg-brand-primary cursor-pointer"} mx-auto`} disabled={!Values} onClick={stdfu}>APPLY</button>
+            <button className={`my-9 rounded-lg text-[14px] font-lgbtn w-80 p-2 ${!Values ? "!bg-brand-inpnot cursor-not-allowed" : "bg-brand-primary cursor-pointer"} mx-auto`} disabled={!Values} onClick={stdfu}>APPLY</button>
           </div>
           {/* <button onClick={stdfu}>hdjhfjh</button> */}
         </div>
