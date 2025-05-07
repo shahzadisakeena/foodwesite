@@ -14,11 +14,9 @@ const geistMono = localFont({
 });
 
 export const metadata = {
-  title: "KFC Pakistan",
+  title: "YUM'S Pakistan",
   description: "Kentucky Fried Chicken",
-  icons: {
-    icon: "/images/logo.png", // Path to your favicon in the `public` directory
-  },
+ 
 };
 
 export default function RootLayout({ children }) {

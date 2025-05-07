@@ -48,9 +48,12 @@ const Navbar = () => {
             </SheetTrigger>
             <SheetContent className="overflow-auto font-login">
               <div className=" p-3">
+                <Link href="/login">
                 <button className="bg-brand-primary px-3 py-3 rounded-md text-brand-secondary font-semibold ">
                   LOGIN
                 </button>
+                </Link>
+                
               </div>
               <div className="flex justify-end">
                 <Switch />
