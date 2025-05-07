@@ -23,13 +23,13 @@ const TopDeals = () => {
 
   const CardData = [
     {
-      img: "/images/TD1.png",
+      img: "/images/BS3.png",
       title: "Krunch Combo",
       price: 950,
       desc: "1 Zinger Stacker + 1 Regular fries + 1 Regular drink",
     },
     {
-      img: "/images/TD2.png",
+      img: "/images/cat1.png",
       title: "Krunch Burger",
       price: 1350,
       desc: "Turn up the fun with 5 pcs Hot & Crispy Chicken + 1 Large fries + 2 Regular drinks",
@@ -61,8 +61,8 @@ const TopDeals = () => {
     return (initialPrice * quantity).toFixed(2);
   };
   return (
-    <div className="h-full w-[85vw] flex flex-col mx-auto my-10">
-      <div className="text-brand-secondary text-3xl uppercase font-bold">
+    <div className="h-full w-[90vw] flex flex-col mx-auto my-10 font-login tracking-wider">
+      <div className="text-brand-secondary text-4xl uppercase font-bold font-login">
         <h2>
           <span className="relative inline-block">
             Top
@@ -75,7 +75,7 @@ const TopDeals = () => {
         </h2>
       </div>
 
-      <div className="flex items-center justify-center flex-wrap gap-6 mt-8 ">
+      <div className="flex items-center lg:justify-start justify-center flex-wrap gap-6 mt-8 ">
         {CardData.map((deal, index) => (
           <div key={index} className="p-1 group">
             <Card
@@ -98,7 +98,7 @@ const TopDeals = () => {
                   <div className="relative inline-block text-brand-secondary text-xl font-bold">
                     {deal.title}
                   </div>
-                  <div className="text-sm text-brand-secondary line-clamp-2 mt-2">
+                  <div className="text-sm text-brand-secondary  line-clamp-2 mt-2">
                     {deal.desc}
                   </div>
                   <div className="text-md font-bold mt-4 text-brand-secondary">
@@ -120,7 +120,7 @@ const TopDeals = () => {
       </div>
       {isDialogOpen && (
         <AlertDialog open={isDialogOpen} onOpenChange={closeDialog}>
-          <AlertDialogContent className="lg:max-w-[800px] max-w-[350px] h-[550px] lg:h-[600px] bg-brand-darkGray border-none !rounded-3xl">
+          <AlertDialogContent className="lg:max-w-[800px] max-w-[350px] h-[550px] lg:h-[600px] font-login tracking-wider bg-brand-darkGray border-none !rounded-3xl">
             <AlertDialogCancel
               onClick={closeDialog}
               className="absolute top-4 right-4 bg-brand-primary border-none"

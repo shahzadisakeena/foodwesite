@@ -11,9 +11,9 @@ const Hero = () => {
   );
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [autoplay.current]);
   const slides = [
-    { id: 1, url: "/images/slider1.jpg", alt: "Slide 1" },
-    { id: 2, url: "/images/slider2.jpg", alt: "Slide 2" },
-    { id: 3, url: "/images/slider3.jpg", alt: "Slide 3" },
+    { id: 1, url: "/images/slide1.jpg", alt: "Slide 1" },
+    { id: 2, url: "/images/slide2.jpg", alt: "Slide 2" },
+    { id: 3, url: "/images/slide3.jpg", alt: "Slide 3" },
   ];
    // Function to navigate to the previous slide
    const scrollPrev = () => {

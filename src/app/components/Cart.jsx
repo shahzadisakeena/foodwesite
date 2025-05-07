@@ -21,7 +21,7 @@ const Cart = () => {
   const gst = subtotal * gstRate;
   const total = subtotal + gst + deliveryCharge;
   return (
-    <div className="flex lg:flex-row flex-col items-center justify-between mx-auto  w-[85vw] h-full">
+    <div className="flex lg:flex-row flex-col items-center justify-between mx-auto  w-[90vw] h-full">
       <div className="flex relative flex-col p-4 justify-center rounded-lg lg:-mt-8 mt-28  lg:w-[70%] w-[320px] h-[70%] bg-brand-darkGray">
         <div className="  flex items-center border-b-2 border-brand-secondary">
           <Link href="/">
@@ -29,13 +29,13 @@ const Cart = () => {
               <ChevronLeft />
             </div>
           </Link>
-          <h2 className="lg:text-xl text-lg mb-4 mx-10 font-bold text-brand-secondary">
+          <h2 className="lg:text-xl text-lg mb-4 mx-10 font-login font-bold text-brand-secondary">
             Items From Your Cart
           </h2>
         </div>
         <div className=" flex items-center justify-center mx-auto lg:h-[280px] lg:w-[280px] h-[220px] w-[220px]">
           <Image
-            src="/images/cart.png"
+            src="/images/fastfood.png"
             width={500}
             height={500}
             alt="cart"
@@ -43,19 +43,19 @@ const Cart = () => {
           />
         </div>
         <div className="flex items-center justify-center ">
-          <h2 className="lg:text-xl text-lg text-center text-brand-secondary font-bold">
+          <h2 className="lg:text-xl text-lg text-center font-ftr text-brand-secondary font-bold">
             You haven’t added any items in bucket yet
           </h2>
         </div>
         <div className="flex items-center justify-center mx-auto">
           <Link href="/menu">
-            <button className="bg-brand-primary rounded-xl px-6 lg:py-3 py-2 lg:w-72 w-60 text-brand-secondary lg:text-xl text-lg font-bold my-5">
+            <button className="bg-brand-primary font-ftr rounded-xl px-6 lg:py-3 py-2 lg:w-72 w-60 text-brand-secondary lg:text-xl text-lg font-bold my-5">
               Explore Menu
             </button>
           </Link>
         </div>
       </div>
-      <div className="flex items-center  justify-center lg:mt-20 my-10 lg:my-0  lg:mx-4 ">
+      <div className="flex items-center font-ftr  justify-center lg:mt-20 my-10 lg:my-0  lg:mx-4 ">
         <div className="bg-brand-darkGray p-4 rounded-lg lg:w-[400px] w-[320px]">
           <h1 className="text-xl text-brand-secondary font-bold  border-b-2 border-brand-primary">
             0 Items Added
@@ -114,7 +114,7 @@ const Cart = () => {
             </FormControl>
           </div>
           <div className="mt-3 flex flex-col bg-brand-accent rounded-lg mx-1 p-2">
-            <h2 className="lg:text-3xl text-2xl text-center text-brand-secondary font-bold">
+            <h2 className="lg:text-3xl font-login text-2xl text-center text-brand-secondary font-bold">
               Your Order
             </h2>
             <div className="flex justify-between text-lg text-brand-secondary mx-4 my-4">

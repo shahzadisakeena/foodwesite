@@ -3,37 +3,37 @@ import React from "react";
 
 const KfcStory = () => {
   const octagonsData = [
-    { year: "1890", text: "Harland Sanders was born" },
+    { year: "1890", text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, exercitationem." },
     {
       year: "1930",
-      text: "Sanders Court & Cafe was opened in front of his gas station in Corbin, Kentucky",
+      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, exercitationem.",
     },
     {
       year: "1940",
-      text: "Colonel Sanders develops the Original Recipe from 11 secret herbs and spices",
+      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, exercitationem.",
     },
     {
       year: "1952",
-      text: "The Colonel begins franchising his business traveling from town to town",
+      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, exercitationem.",
     },
-    { year: "1957", text: "Kentucky Fried Chicken is first sold in buckets" },
+    { year: "1957", text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, exercitationem." },
     {
       year: "1964",
-      text: "More than 600 franchised outlets in the USA, Canada, and UK",
+      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, exercitationem.",
     },
-    { year: "1974", text: "KFC first launches in Kuwait" },
+    { year: "1974", text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, exercitationem." },
     {
       year: "1980",
-      text: "Colonel Sanders passes away at the age of 90. His legacy lives on",
+      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, exercitationem.",
     },
     {
       year: "Today",
-      text: "Today we have more than 25,000 KFC restaurants in over 145 countries and territories around the world.",
+      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, exercitationem.",
     },
   ];
 
   return (
-    <div className="flex flex-col lg:mt-20 mt-10 h-full w-[85vw] mx-auto">
+    <div className="flex flex-col lg:mt-20 mt-10 h-full w-[90vw] mx-auto">
       {/* Heading */}
       <div className="flex items-start justify-start">
         <h2 className="lg:text-3xl md:text-2xl sm:text-xl text-brand-secondary font-bold">
@@ -46,7 +46,7 @@ const KfcStory = () => {
         {octagonsData.slice(0, 5).map((item, index) => (
           <div
             key={index}
-            className="relative w-[300px] h-[300px] sm:w-[200px] sm:h-[200px] flex-shrink-0"
+            className="relative w-[500px] h-[500px] sm:w-[200px] sm:h-[200px] flex-shrink-0"
           >
             {/* Octagon Shape */}
             <Octagon

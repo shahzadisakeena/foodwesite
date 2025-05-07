@@ -54,7 +54,7 @@ const CategoryBar = ({ categories }) => {
   }, [categories]);
 
   return (
-    <div className="fixed z-10 lg:top-24 top-32 left-0 w-full bg-brand-accent p-4">
+    <div className="fixed z-10 lg:top-24 top-24 left-0 w-full bg-brand-accent p-4">
       <div
         className="flex items-center lg:justify-center justify-start gap-4 overflow-x-auto whitespace-nowrap px-4"
         style={{

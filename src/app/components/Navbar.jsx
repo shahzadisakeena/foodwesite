@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import React from "react";
-
+import { useState } from "react";
 import {
   ChartNoAxesGantt,
   ShoppingBag,
@@ -14,7 +14,6 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Switch } from "@/components/ui/switch";
 import CustomDialog from "./DeliveryBtn";
 import PickupBtn from "./PickupBtn";
-import Image from "next/image";
 const Navbar = () => {
   const navLinks = [
     { name: "About Us", path: "/aboutus" },
@@ -34,15 +33,17 @@ const Navbar = () => {
     },
     { name: "Explore Menu", path: "/menu", icon: <Logs size={20} /> },
   ];
+  const [isSheetOpen, setIsSheetOpen] = useState(false);
+
   return (
-    <nav className="fixed top-0 left-0 z-50 shadow-md bg-brand-accent lg:h-24 w-full lg:flex items-center py-2 lg:py-0 ">
-      <div className="container flex items-center justify-between p-4 lg:px-24 lg:mx-auto">
+    <nav className="fixed top-0 left-0 z-50 shadow-md bg-brand-accent  lg:h-24 w-full lg:flex items-center py-2 lg:py-0 ">
+      <div className="container flex items-center justify-between w-[90vw] mx-auto">
         <div className="flex items-center ">
-          <Sheet>
+          <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
             <SheetTrigger>
               <ChartNoAxesGantt
                 size={38}
-                className="text-brand-secondary lg:mx-5"
+                className="text-brand-secondary"
               />
             </SheetTrigger>
             <SheetContent className="overflow-auto font-login">
@@ -61,6 +62,7 @@ const Navbar = () => {
                       key={link.name}
                       href={link.path}
                       className="flex items-center text-md text-brand-secondary mt-5"
+                      onClick={() => setIsSheetOpen(false)} 
                     >
                       <div className="bg-brand-primary p-1">{link.icon}</div>
                       <span className="mx-2">{link.name}</span>
@@ -76,6 +78,8 @@ const Navbar = () => {
                       key={link.name}
                       href={link.path}
                       className="text-md text-brand-secondary mt-5"
+                      onClick={() => setIsSheetOpen(false)} 
+
                     >
                       {link.name}
                     </Link>
@@ -88,7 +92,7 @@ const Navbar = () => {
           <div className="hidden lg:flex flex-grow items-center justify-center">
             <Link href="/">
               <span className="text-brand-primary font-extrabold text-4xl lg:mx-5">
-                KFC
+                YUM'S
               </span>
             </Link>
           </div>
@@ -118,7 +122,7 @@ const Navbar = () => {
         <div className="flex items-center ml-auto lg:ml-0">
           <Link href="/" className="lg:hidden">
             <span className="text-brand-primary font-extrabold text-2xl ">
-              KFC
+              YUM'S
             </span>
           </Link>
           <Link href="/bucket">
@@ -128,7 +132,7 @@ const Navbar = () => {
             />
           </Link>
           <Link href="/login">
-            <button className="bg-brand-primary px-4 py-2 h-10 rounded-md text-brand-secondary font-bold hidden lg:block">
+            <button className="bg-brand-primary px-4 py-2 h-10 rounded-md text-brand-secondary font-bold hidden lg:block font-login text-x">
               LOGIN
             </button>
           </Link>

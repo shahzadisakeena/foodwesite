@@ -40,10 +40,10 @@ const calculateTotalPrice = ()=>{
 return(initialPrice*quantity).toFixed(2)
 }
   return (
-    <div className="flex flex-wrap gap-6 justify-center">
+    <div className="flex flex-wrap gap-6 lg:justify-start justify-center">
       {items.map((item) => (
         <div key={item.id} className="p-1 group">
-          <Card className="rounded-md cursor-pointer h-[418px] w-[265px] relative shadow-lg"
+          <Card className="rounded-md cursor-pointer h-[418px] w-[290px] font-login relative shadow-lg"
           onClick={()=>openDialog(item)}
           >
             <CardContent className="flex flex-col justify-center mx-auto h-full p-4">
@@ -77,7 +77,7 @@ return(initialPrice*quantity).toFixed(2)
       ))}
     {isDialogOpen && (
     <AlertDialog open={isDialogOpen} onOpenChange={closeDialog}>
-    <AlertDialogContent className="lg:max-w-[800px] max-w-[350px] h-[550px] lg:h-[600px] bg-brand-darkGray border-none !rounded-3xl">
+    <AlertDialogContent className="lg:max-w-[800px] font-login max-w-[350px] h-[550px] lg:h-[600px] bg-brand-darkGray border-none !rounded-3xl">
     <AlertDialogCancel onClick={closeDialog}
     className="absolute top-4 right-4 bg-brand-primary border-none"
     >

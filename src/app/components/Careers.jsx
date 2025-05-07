@@ -124,7 +124,7 @@ const Careers = () => {
 
   return (
     <>
-      <div className="flex flex-col mt-10 h-full w-[85vw] mx-auto">
+      <div className="flex flex-col mt-10 h-full w-[90vw] mx-auto">
         <div className="flex items-center justify-center my-6">
           <h2 className='text-[42px] text-brand-secondary font-bold'>Careers</h2>
         </div>
@@ -610,8 +610,8 @@ const Careers = () => {
             <h5 className="text-[42px] font-semibold flex justify-center items-center">
               Applicant agreement
             </h5>
-            <p className="font-ftr my-9">
-              I certify that all information provided in this application is true and complete. I understand that any false information or omission may disqualify me from further consideration for employment and may result in my dismissal If discovered at a later date. I authorize and agree to cooperate in a thorough investigation of all statements made herein and other matters relating to my background and qualification. I understand that any investigation conducted may include a request for employment, educational and criminal history. I authorize any person, school, current and former employer, consumer reporting agency and any other organization or agency to provide information relevant to such investigation and I hereby release all persons and corporations requesting or supplying information pursuant to such investigation from all liability or responsibility to me for doing so. I understand that I have the right to make a written request within a reasonable period of time for complete disclosure of the nature and scope of any investigation. I further authorize any physician or hospital to release any information which may be necessary to determine my ability to perform the job for which I am being considered or any future job in the event that I am hired. I UNDERSTAND THAT THIS APPLICATION OR SUBSEQUENT EMPLOYMENT DOES NOT CREATE A CONTRACT OF EMPLOYMENT NOR GUARANTEE EMPLOYMENT FOR ANY DEFINITE PERIOD OF TIME.
+            <p className="font-ftr my-9 text-center">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, perspiciatis explicabo ex dignissimos libero dolorum temporibus a nostrum sit, ipsa necessitatibus, consequatur deleniti? Voluptatem nulla saepe sapiente, totam vel corporis quaerat dolores suscipit obcaecati consectetur illo dolorum tempore nemo. Impedit, sit. Animi consectetur, quidem eaque obcaecati totam molestiae ratione beatae delectus unde nisi iste repellendus voluptate, quas sint qui vitae amet! Aperiam voluptatem totam delectus, rerum eligendi beatae ducimus. Deserunt odit temporibus quam, beatae autem perferendis vel aspernatur corrupti cumque asperiores culpa quas mollitia doloremque non facere sit et sint aliquam, distinctio laboriosam, porro ipsa unde officiis! Odit, voluptas saepe.
             </p>
           </div>
           <div className="w-full flex flex-col  md:w-2/3">

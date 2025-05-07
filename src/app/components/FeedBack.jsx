@@ -32,25 +32,25 @@ const FeedBack = () => {
 
   return (
     <div className=" lg:mt-28 mt-32">
-      <h3 className="text-brand-secondary text-center lg:text-3xl text-2xl font-bold">
+      <h3 className="text-brand-secondary text-center lg:text-4xl font-login text-2xl font-bold">
         Have Some Feedback To Share?
       </h3>
-      <h3 className="text-brand-primary text-center lg:text-2xl text-xl my-2">
+      <h3 className="text-brand-primary text-center font-ftr lg:text-2xl text-xl my-2">
         Well, you’ve come to the right place!
       </h3>
-      <p className="text-brand-secondary text-lg lg:w-[60%]  lg:mx-auto   text-center">
+      <p className="text-brand-secondary text-lg lg:w-[60%]  lg:mx-auto font-ftr   text-center">
         Fill in the sections below and we'll be in touch soon, or if you want to
         contact a specific store, visit our locations page for store contact
         details. * indicates a required answer
       </p>
 
       <div className="flex flex-col mt-10 lg:flex-row lg:justify-between lg:space-x-4 items-center">
-        <div className="bg-brand-darkGray p-4 w-[95vw] lg:w-[48%] rounded-xl">
-          <h2 className="lg:text-2xl text-xl text-brand-secondary font-bold">
+        <div className="bg-brand-darkGray p-4 w-[95vw] lg:w-[50%] rounded-xl">
+          <h2 className="lg:text-2xl font-login text-xl text-brand-secondary font-bold">
             Contact Details
           </h2>
           <form ref={formRef} onSubmit={handleSubmit(onSubmit)}>
-            <div className="flex lg:flex-row flex-col items-center mt-2 justify-between mx-auto">
+            <div className="flex lg:flex-row font-ftr flex-col items-center mt-2 justify-between mx-auto">
               <div className="relative lg:w-64 w-full text-brand-secondary">
                 <label className="flex absolute left-2 text-brand-secondary text-md">
                   FULL NAME
@@ -108,7 +108,7 @@ const FeedBack = () => {
                 )}
               </div>
             </div>
-            <div className="relative w-full text-brand-secondary">
+            <div className="relative font-ftr w-full text-brand-secondary">
               <label className="flex absolute left-2  text-brand-secondary text-md ">
                 EMAIL
               </label>
@@ -137,7 +137,7 @@ const FeedBack = () => {
               )}
             </div>
 
-            <div className="flex flex-col relative w-full text-brand-secondary">
+            <div className="flex flex-col font-ftr relative w-full text-brand-secondary">
               <input
                 type="text"
                 placeholder=" "
@@ -179,7 +179,7 @@ const FeedBack = () => {
     FEEDBACK CHANNEL
   </label>
 </div> */}
-            <div className="relative w-full text-brand-secondary">
+            <div className="relative font-ftr w-full text-brand-secondary">
               <select
                 id="feedbackChannel"
                 className={`bg-brand-lgInp h-14 w-full rounded-t-xl border-b-2 ${
@@ -219,12 +219,12 @@ const FeedBack = () => {
           </form>
         </div>
 
-        <div className="bg-brand-darkGray p-4  lg:w-[48%] w-[95vw] mt-8 lg:mt-0 rounded-xl">
-          <h2 className="lg:text-2xl text-xl mb-4 lg:mb-0 text-brand-secondary font-bold">
+        <div className="bg-brand-darkGray p-4  lg:w-[50%] w-[95vw] mt-8 lg:mt-0 rounded-xl">
+          <h2 className="lg:text-2xl text-xl mb-4 font-login lg:mb-0 text-brand-secondary font-bold">
             About Your Visit
           </h2>
           <form ref={formRef} onSubmit={handleSubmit(onSubmit)}>
-            <div className="flex lg:flex-row flex-col items-center  justify-between mx-auto">
+            <div className="flex font-ftr lg:flex-row flex-col items-center  justify-between mx-auto">
               <div className="relative w-full text-brand-secondary">
                 <select
                   id="store"
@@ -318,7 +318,7 @@ const FeedBack = () => {
               {/* Label */}
               <label
                 htmlFor="feedbacktype"
-                className="absolute left-2 text-brand-secondary text-lg"
+                className="absolute font-ftr left-2 text-brand-secondary text-lg"
               >
                 FEEDBACK TYPE
               </label>
@@ -345,7 +345,7 @@ const FeedBack = () => {
         <button
           type="button"
           onClick={handleButtonClick} // Trigger form submission
-          className="bg-brand-primary w-48 rounded-lg py-3 text-white"
+          className="bg-brand-primary w-48 font-login rounded-lg py-3 text-white"
         >
           Submit
         </button>

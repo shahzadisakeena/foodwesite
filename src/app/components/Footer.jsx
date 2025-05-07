@@ -10,11 +10,9 @@ const Footer = () => {
           {/* Logo and Social Links */}
           <div className="flex justify-center items-center space-x-14">
            <Link href="/">
-           <img
-              src="/images/logo.png"
-              alt="brand-logo"
-              className="cursor-pointer w-20 h-auto"
-            />
+           <span className="text-brand-primary font-extrabold !font-logo text-4xl ">
+              YUM'S
+            </span>
            </Link>
            
             <div className="flex gap-3">
@@ -111,13 +109,13 @@ const Footer = () => {
             </div>
           </div>
           <div className="mt-2 text-white text-md lg:px-12 flex justify-between flex-col lg:flex-row md:flex-row ">
-            <p className="m-0">2024 KFC. All rights reserved</p>
+            <p className="m-0">2025 YUM'S. All rights reserved</p>
             <div>
               <h1 className="text-brand-primary font-logo font-semibold">
                 Powered by
               </h1>
-              <Link href="/" className="  underline">
-                SimpleX Technology Solutions
+              <Link href="https://www.webaura.site/" className="  underline">
+                WebAura
               </Link>
             </div>
           </div>

@@ -2,191 +2,131 @@ import React from "react";
 
 const PrivacyPolicy = () => {
   return (
-    <div className="flex flex-col lg:w-[85vw] w-[95vw] mx-auto my-5 leading-6 tracking-wide">
-      <h1 className="text-brand-secondary text-center lg:text-3xl text-2xl font-bold">
+    <div className="flex flex-col w-[90vw] mx-auto my-5 leading-6 tracking-wide">
+      <h1 className="text-brand-secondary text-center lg:text-3xl text-2xl font-bold font-login">
         {" "}
         Privacy Policy
       </h1>
-      <p className="lg:text-md text-sm text-brand-secondary font-thin text-center mt-8">
-        KFC CORPORATION PRIVACY POLICY — YOUR PRIVACY RIGHTS
-        <p className="lg:text-md text-sm text-brand-secondary font-thin text-center ">
+      <p className="lg:text-md text-sm text-brand-secondary font-thin font-ftr text-center mt-8">
+        YUM'S CORPORATION PRIVACY POLICY — YOUR PRIVACY RIGHTS
+        <p className="lg:text-md text-sm text-brand-secondary font-thin font-ftr text-center ">
           EFFECTIVE DATE: JUNE 9, 2014
         </p>
       </p>
       <div>
-        <h3 className="text-brand-secondary mt-8 lg:text-xl text-lg font-bold">
+        <h3 className="text-brand-secondary mt-8 lg:text-xl text-lg font-bold font-ftr">
           THIS PRIVACY POLICY APPLIES TO THE SITES
         </h3>
-        <p className="text-brand-secondary mt-2">
-          This Policy describes how we treat personal information both online
-          and offline. This includes on our websites. It also includes in phone
-          or email interactions you have with us.
+        <p className="text-brand-secondary mt-2 font-ftr ">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis quidem nostrum distinctio adipisci cum veniam, aliquam natus aspernatur architecto voluptatem!
         </p>
       </div>
       <div>
-        <h3 className="text-brand-secondary mt-8 lg:text-xl text-lg font-bold">
+        <h3 className="text-brand-secondary mt-8 font-ftr lg:text-xl text-lg font-bold">
           WE COLLECT INFORMATION FROM AND ABOUT YOU
         </h3>
-        <ul className="list-disc mx-4 mt-2 text-brand-secondary lg:text-lg text-sm">
+        <ul className="list-disc mx-4 mt-2 font-ftr text-brand-secondary lg:text-lg text-sm">
           <li>
-            Contact information. For example, we might collect your name and
-            street address. We might also collect your phone number or email
-            address.
+           Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, optio.
           </li>
           <li>
-            Payment and billing information. For example, we collect your credit
-            card number and zip code when you buy one of our products.
-            Information you submit or post. If you post content, apply for a
-            job, or respond to a survey, we will collect the information you
-            provide to us.
+       Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, dolorem? Dicta a cumque praesentium possimus hic cum repellat, totam sunt voluptatum harum nam autem dolor eveniet! Quia magnam harum dolores!
           </li>
           <li>
-            Demographic information. We may collect information about our
-            services you like or products you buy. We might collect this as part
-            of a survey, for example.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda nisi, tempore quam quisquam sequi excepturi? Officiis debitis laudantium aliquam perferendis.
           </li>
           <li>
-            Other information. If you use our website, we may collect
-            information about your computer location or the browser you're
-            using. We might look at what site you came from, or what site you
-            visit when you leave us.
+       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas sapiente voluptates asperiores. Numquam commodi, nisi dolores magni ipsum aperiam neque porro, sapiente pariatur a aspernatur?
           </li>
         </ul>
       </div>
       <div>
-        <h3 className="text-brand-secondary mt-8 lg:text-xl text-lg font-bold">
+        <h3 className="text-brand-secondary font-ftr mt-8 lg:text-xl text-lg font-bold">
           WE USE INFORMATION AS DISCLOSED AND DESCRIBED HERE
         </h3>
-        <ul className="list-disc mx-4 mt-2 text-brand-secondary lg:text-lg text-sm">
+        <ul className="list-disc mx-4 mt-2 font-ftr text-brand-secondary lg:text-lg text-sm">
           <li>
-            We use information to respond to your requests or questions. For
-            example, we might use your information to confirm your registration
-            for a program or contest, or fulfill prizes or premiums in a
-            promotion. We may use your friend's email address if you send them
-            features on our site.
+         Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quis debitis sapiente temporibus ex dolorem, animi repudiandae corrupti odio voluptatibus, qui saepe a minima? Repudiandae, veniam accusantium! Officiis, laudantium rem.
           </li>
           <li>
-            We use information to improve our products and services. We might
-            use your information to customize your experience with us. We may
-            use your information to make our website and products better.
+           Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti cum quasi vel mollitia eum a nesciunt sapiente porro esse possimus?
           </li>
           <li>
-            We use information to look at site trends and customer interests. We
-            may use your information to make our website and products better. We
-            may combine information we get from you with information about you
-            we get from third parties.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, at commodi doloribus dolor quam eos quidem, aliquam rerum nam illo officiis ex perspiciatis, necessitatibus temporibus eveniet non laboriosam? Excepturi, soluta!
           </li>
           <li>
-            We use information for security purposes. We may use information to
-            protect our company, our customers, or our websites. For example, in
-            the event of a breach, we may use your contact information to
-            contact you about that incident.
+           Lorem ipsum dolor sit amet consectetur adipisicing elit. Et enim, ad voluptate nisi magnam perspiciatis debitis alias deleniti, esse blanditiis similique a. Reprehenderit, nobis voluptates. Placeat, omnis quis excepturi voluptates laboriosam natus temporibus dicta similique, nihil saepe earum maxime deleniti.
           </li>
           <li>
-            We use information for marketing purposes. For example, we might
-            send you information about special promotions or offers. We might
-            also tell you about new features or products. These might be our own
-            offers or products, or third-party offers or products we think you
-            might find interesting. To learn about your choices for these
-            communications, read the choices section below.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, quod repudiandae. Eius est, nulla vero eveniet hic delectus molestiae repellendus doloremque quo incidunt sed amet recusandae eligendi explicabo quasi libero dicta nobis ipsum. At nihil fuga facere rem voluptatem incidunt.
           </li>
           <li>
-            We use information to send you transactional communications. For
-            example, we might send you emails about a purchase you made with us.
-            We might also contact you about this policy or our website terms.
+         Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem sunt rerum voluptate magni, delectus error laboriosam, dolore eveniet fugiat deserunt nobis officiis consectetur aut quaerat molestiae qui quasi nisi iure!
           </li>
           <li>We use information as otherwise permitted by law.</li>
         </ul>
       </div>
       <div>
-        <h3 className="text-brand-secondary mt-8 lg:text-xl text-lg font-bold">
+        <h3 className="text-brand-secondary font-ftr mt-8 lg:text-xl text-lg font-bold">
           YOU HAVE CERTAIN CHOICES ABOUT HOW WE USE YOUR INFORMATION
         </h3>
-        <ul className=" list-disc mx-4 mt-2 text-brand-secondary lg:text-lg text-sm">
+        <ul className=" list-disc mx-4 mt-2 font-ftr text-brand-secondary lg:text-lg text-sm">
           <li>
-            You can opt out of receiving our marketing emails. To stop receiving
-            our promotional emails, send a request to
-            customercare@kfcpakistan.com or follow the instructions in any
-            promotional message you get from us. It may take about ten (10) days
-            to process your request. Don't worry! Even if you opt out of getting
-            marketing messages, we will still be sure to send you transactional
-            messages. For example, we may still contact you about your orders.
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis laboriosam similique facere ducimus vel autem aliquid illum exercitationem, quo, temporibus obcaecati cupiditate cum ad vitae nihil ex veniam perferendis recusandae sint dolorem? Debitis recusandae beatae obcaecati, nesciunt consectetur rem cumque.
           </li>
           <li>
-            You can control if we share information with third parties for their
-            marketing purposes. To opt out of having us share your information
-            with third parties for their promotional purposes, click here .
+       Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid fuga, ullam praesentium quisquam dolore reiciendis possimus, odit nostrum doloremque quidem laboriosam voluptatem quia ipsam soluta explicabo nulla aperiam ut quos!
           </li>
         </ul>
       </div>
       <div>
-        <h3 className="text-brand-secondary mt-8 lg:text-xl text-lg font-bold">
+        <h3 className="text-brand-secondary font-ftr mt-8 lg:text-xl text-lg font-bold">
           YOU CAN GET YOUR ACCOUNT INFORMATION UPDATED OR DELETED
         </h3>
-        <ul className=" list-disc mx-4 mt-2 text-brand-secondary lg:text-lg text-sm">
+        <ul className=" list-disc mx-4 mt-2 font-ftr text-brand-secondary lg:text-lg text-sm">
           <li>
-            Any information that you want us to change or delete, for instance,
-            your email address, can be requested by you. These requested changes
-            will be made only after your consent, and we will update you
-            regarding them. For any such requests you can always contact us on
-            our support email i.e. customercare@kfcpakistan.com.
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis voluptate quam fuga optio. Odit est veritatis facere impedit maiores eligendi quis non? Veritatis ex hic, dolorem voluptas ipsum neque amet.
           </li>
           <li>
-            If you want to delete your Facebook social login account from KFC
-            Web & Apps, you can remove your information by following these
-            steps:
+           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus sit ipsam quo harum dolorum ea vitae, illum ex in doloremque:
           </li>
-          <ul className="list-decimal  mx-4 mt-2 text-brand-secondary lg:text-lg text-sm">
+          <ul className="list-decimal font-ftr mx-4 mt-2 text-brand-secondary lg:text-lg text-sm">
             <li>
-              Go to your Facebook Account’s Setting & Privacy. Click “Settings”.
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, itaque.
             </li>
             <li>
-              Look for “Apps and Websites” and you will see all of the apps and
-              websites you linked with your Facebook.
+             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, repellendus.
             </li>
-            <li>Search and Click “KFC” in the search bar.</li>
-            <li>Scroll and click “Remove”.</li>
+            <li>Lorem ipsum dolor sit amet consectetur.</li>
+            <li>Lorem ipsum dolor sit amet.</li>
             <li>
-              Congratulations, you have successfully removed your app activities
-              and data from the KFC platform.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, doloribus!
             </li>
           </ul>
           <li>
-            Once your account has been deleted after your approval, you will
-            lose all the information associated with that account e.g.
-            Addresses, Past Orders.
+       Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque, mollitia suscipit. Molestias, quod repellat? Quibusdam reprehenderit illo nemo error quaerat amet maiores ut corporis cum quasi autem ipsam quisquam numquam inventore ullam atque, id hic optio suscipit! Et, harum in.
           </li>
         </ul>
       </div>
       <div>
-        <h3 className="text-brand-secondary mt-8 lg:text-xl text-lg font-bold">
+        <h3 className="text-brand-secondary font-ftr mt-8 lg:text-xl text-lg font-bold">
           WE USE INFORMATION AS DISCLOSED AND DESCRIBED HERE
         </h3>
-        <ul className=" list-disc mx-4 mt-2 text-brand-secondary lg:text-lg text-sm">
+        <ul className=" list-disc mx-4 mt-2 font-ftr text-brand-secondary lg:text-lg text-sm">
           <li>
-            Our sites are meant for adults. We do not knowingly collect
-            personally identifiable information from children under 13 without
-            permission from a parent or guardian. If you are a parent or legal
-            guardian and think your child under 13 has given us information, you
-            can email us here . You can also write to us at the address listed
-            at the end of this policy. Please mark your inquiries "COPPA
-            Information Request."
+         Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis natus et asperiores, aliquid amet hic debitis minima iure illum a sapiente aperiam numquam incidunt ullam, placeat ab? Aperiam animi voluptate soluta fugiat maxime inventore fuga suscipit quis aliquam illo earum accusantium qui, error neque tenetur libero in quidem assumenda rerum!
           </li>
           <li>
-            Parents, you can also learn more about how to protect children's
-            privacy online here .
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed delectus architecto error totam officiis dicta veritatis minus! Natus, adipisci enim?
           </li>
         </ul>
       </div>
       <div>
-        <h3 className="text-brand-secondary mt-8 lg:text-xl text-lg font-bold">
+        <h3 className="text-brand-secondary font-ftr mt-8 lg:text-xl text-lg font-bold">
           WE USE INFORMATION AS DISCLOSED AND DESCRIBED HERE
         </h3>
-        <p className="text-brand-secondary mt-2">
-          From time to time we may change our privacy practices. We will notify
-          you of any material changes to this policy as required by law. We will
-          also post an updated copy on our website. Please check our site
-          periodically for updates
+        <p className="text-brand-secondary font-ftr mt-2">
+         Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus eum quos expedita eaque odit dignissimos est possimus omnis accusamus voluptatibus tenetur debitis laborum doloribus consectetur, blanditiis aut libero. Officiis cupiditate quibusdam eos itaque perspiciatis ratione veritatis quis, distinctio earum veniam.
         </p>
       </div>
     </div>

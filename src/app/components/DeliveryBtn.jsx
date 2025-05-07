@@ -28,7 +28,7 @@ const CustomDialog = () => {
         <DialogTrigger asChild>
           <button className="bg-brand-darkGray focus:border-brand-primary focus:border-[3px] rounded-md px-4 py-2 text-brand-secondary w-36 h-12 flex items-center justify-center space-x-2">
             <Image
-              src="/images/Delivery.png"
+              src="/images/pickup.svg"
               alt="Deliver"
               width={30}
               height={30}

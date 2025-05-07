@@ -9,7 +9,7 @@ const MenuPage = () => {
   return (
     <div className='mt-48  ' >
       <CategoryBar categories={categories} />
-      <div className="container w-[85vw] mx-auto px-4 ">
+      <div className="container w-[90vw] mx-auto px-4 ">
         {categories.map((category) => (
           <div key={category} id={category} className="my-8 ">
             <h2 className="lg:text-3xl text-xl text-brand-secondary font-bold mb-4">

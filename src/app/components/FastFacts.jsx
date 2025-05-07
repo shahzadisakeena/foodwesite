@@ -6,34 +6,34 @@ const factsData = [
     image: "/images/pk.png",
     year: "1997",
     description:
-      "The first KFC restaurant in Pakistan opened in 1997 and was located in Gulshan-e-Iqbal Karachi.",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, exercitationem.",
   },
   {
     image: "/images/hut.png",
     year: "128",
     description:
-      "The first KFC restaurant in Pakistan opened in 1997 and was located in Gulshan-e-Iqbal Karachi.",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, exercitationem.",
   },
   {
     image: "/images/colab.png",
     year: "9",
     description:
-      "The first KFC restaurant in Pakistan opened in 1997 and was located in Gulshan-e-Iqbal Karachi.",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, exercitationem.",
   },
   {
     image: "/images/chick.png",
     year: "9000+",
     description:
-      "The first KFC restaurant in Pakistan opened in 1997 and was located in Gulshan-e-Iqbal Karachi.",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, exercitationem.",
   },
 ];
 
 const FastFacts = () => {
   return (
     <div className="h-full w-full bg-brand-darkGray lg:my-20 my-10">
-      <div className="flex items-start justify-start w-[85vw] mx-auto py-10">
+      <div className="flex items-start justify-start w-[90vw] mx-auto py-10">
         <h2 className="lg:text-3xl text-xl text-brand-secondary font-bold">
-          Fast Facts about KFC Pakistan
+          Fast Facts about YUM'S Pakistan
         </h2>
       </div>
 

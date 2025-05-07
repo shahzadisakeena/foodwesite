@@ -30,14 +30,14 @@ const BestSellers = () => {
 
   const CardSlide = [
     {
-      img: "/images/BS1.png",
+      img: "/images/cate3.png",
       title: "Krunch Combo",
       price: 570,
       description:
         "Krunch fillet, spicy mayo, lettuce, sandwiched between a sesame seed bun",
     },
     {
-      img: "/images/BS2.png",
+      img: "/images/cate4.png",
       title: "Krunch Burger",
       price: 490,
       description: "1 Krunch burger + 1 Regular fries + 1 Regular drink",
@@ -50,13 +50,13 @@ const BestSellers = () => {
         "2 pieces of Hot and Crispy Fried Chicken+ Fries + Dinner roll+ signature Vietnamese Sauce",
     },
     {
-      img: "/images/BS4.png",
+      img: "/images/cat1.png",
       title: "Hot Wings Bucket",
       price: 770,
       description: "10 Pcs of our Signature Hot & Crispy Wings",
     },
     {
-      img: "/images/BS5.png",
+      img: "/images/cate5.png",
       title: "Mighty Zinger",
       price: 650,
       description:
@@ -85,8 +85,8 @@ const BestSellers = () => {
     return (initialPrice * quantity).toFixed(2);
   };
   return (
-    <div className="h-full w-[85vw] flex flex-col mx-auto my-10">
-      <div className="text-brand-secondary text-3xl uppercase font-bold">
+    <div className="h-full container w-[90vw] flex flex-col mx-auto my-10 font-login tracking-wider">
+      <div className="text-brand-secondary text-4xl uppercase font-bold font-login">
         <h2>
           <span className="relative inline-block">
             Best
@@ -100,23 +100,26 @@ const BestSellers = () => {
       </div>
 
       <Carousel className="mt-8">
-        <CarouselContent className="-ml-1">
+        <CarouselContent className=" flex overflow-x-auto scrollbar-thin scrollbar-thumb-brand-primary">
           {CardSlide.map((slide, index) => (
             <CarouselItem
               key={index}
               className="flex items-center justify-center pl-1 sm:basis-1/2 lg:basis-1/4"
+            style={{scrollSnapAlign:"center"}}
             >
               <div className="p-1">
                 <Card
                   onClick={() => openDialog(slide)}
-                  className="cursor-pointer rounded-md h-[365px] w-[260px] relative shadow-lg"
+                  className="cursor-pointer rounded-md h-[365px] w-[275px] relative shadow-lg"
                 >
-                  <CardContent className="flex flex-col justify-center mx-auto h-full p-4">
+                  <CardContent className="flex flex-col justify-center mx-auto h-full p-4"
+                  style={{scrollSnapType:"x mandatory"}}
+                  >
                     <div className="flex flex-col items-start justify-start mt-4">
                       <div className="relative inline-block text-brand-secondary text-xl font-semibold">
                         {slide.title}
                       </div>
-                      <div className="flex flex-col mt-2 mx-2">
+                      <div className="flex flex-col mt-2 ml-8">
                         <div className="bg-brand-primary text-brand-secondary text-sm font-bold px-4 py-1 rounded-full shadow ml-32">
                           RS. {slide.price}
                         </div>
@@ -137,13 +140,12 @@ const BestSellers = () => {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselNext className="bg-brand-primary border-none text-brand-secondary" />
-        <CarouselPrevious className="bg-brand-primary border-none text-brand-secondary" />
+        
       </Carousel>
 
       {isDialogOpen && (
         <AlertDialog open={isDialogOpen} onOpenChange={closeDialog}>
-          <AlertDialogContent className="flex items-center justify-center flex-col lg:max-w-[800px] max-w-[350px] lg:h-[600px] h-[550px] bg-brand-darkGray border-none !rounded-3xl ">
+          <AlertDialogContent className="flex items-center justify-center font-login tracking-wider flex-col lg:max-w-[800px] max-w-[350px] lg:h-[600px] h-[550px] bg-brand-darkGray border-none !rounded-3xl ">
             <AlertDialogCancel
               onClick={closeDialog}
               className="absolute top-4 right-4 bg-brand-primary border-none"

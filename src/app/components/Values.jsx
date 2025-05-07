@@ -1,14 +1,13 @@
-import Image from 'next/image'
 import React from 'react'
 
 const Values = () => {
   const data = [
-    { image: '/images/people.png', title: "Believe in All People", desc: "We trust each other and believe everyone can be their best self here. Our generous nature shines through everything we do." },
-    { image: '/images/recog.png', title: "Recognize", desc: "We look for ways to recognize our people for their courage and celebrate all achievements – big and small. We never forget to have fun doing it!" },
-    { image: '/images/res.png', title: "Run Great Restaurants", desc: "We are passionate about our food and take pride in creating a great experience for our guests. We do things the right way, even when no one is looking." },
-    { image: '/images/breakt.png', title: "Go for Breakthrough", desc: "We always strive to do and be our best. We work with a sense of urgency and ownership in our brand. We take smart risks to achieve amazing results!" },
-    { image: '/images/build.png', title: "Build Know How", desc: "We always seek to learn more and share our know how with others. Everyone can grow here." },
-    { image: '/images/team.png', title: "Work as a Team", desc: "We help and support each other to grow and achieve more. We benefit from healthy debate to get the best outcomes. We win together as the KFC family!" }
+    { image: '/images/slide1.jpg', title: "Believe in All People", desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. In soluta eius reiciendis saepe aliquid fugiat. Eveniet culpa dolorem numquam enim." },
+    { image: '/images/slide3.jpg', title: "Recognize", desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. In soluta eius reiciendis saepe aliquid fugiat. Eveniet culpa dolorem numquam enim." },
+    { image: '/images/slide2.jpg', title: "Run Great Restaurants", desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. In soluta eius reiciendis saepe aliquid fugiat. Eveniet culpa dolorem numquam enim." },
+    { image: '/images/slide3.jpg', title: "Go for Breakthrough", desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. In soluta eius reiciendis saepe aliquid fugiat. Eveniet culpa dolorem numquam enim." },
+    { image: '/images/slide1.jpg', title: "Build Know How", desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. In soluta eius reiciendis saepe aliquid fugiat. Eveniet culpa dolorem numquam enim." },
+    { image: '/images/slide3.jpg', title: "Work as a Team", desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. In soluta eius reiciendis saepe aliquid fugiat. Eveniet culpa dolorem numquam enim." }
   ]
   return (
     <div className=' container flex flex-col items-center w-[81vw] justify-center h-full mx-auto'>
@@ -27,3 +26,4 @@ const Values = () => {
 }
 
 export default Values
+
