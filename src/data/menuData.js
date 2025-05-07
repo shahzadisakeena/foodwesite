@@ -355,7 +355,7 @@
             image: "/images/cate4.png"
           },
           {
-            id: 26,
+            id: 27,
             name: "Hot Wings Bucket",
             description: "Krunch fillet, spicy mayo, lettuce, sandwiched between a sesame seed bun",
             price:  2050,
