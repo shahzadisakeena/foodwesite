@@ -6,14 +6,12 @@ import TopDeals from "./components/TopDeals";
 import Footer from "./components/Footer";
 export default function Home() {
   return (
-   <div>
-    
-    <Hero/>
-    <Button/>
-    <ExploreMenu/>
-    <BestSellers/>
-    <TopDeals/>
-    <Footer/>
+    <div>
+      <Hero />
+      <ExploreMenu />
+      <BestSellers />
+      <TopDeals />
+      <Footer />
     </div>
   );
 }

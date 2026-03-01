@@ -14,21 +14,23 @@ const geistMono = localFont({
 });
 
 export const metadata = {
-  title: "YUM'S Pakistan",
-  description: "Kentucky Fried Chicken",
- 
+  title: "StoneBake pizza",
+  description: "StoneBake Pizza",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-    
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Navbar/>
+        <Navbar />
         {children}
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZZUXJEB6v7iXbsDfiq23FfrvTN2hxaXM&callback=initMap&v=weekly" defer async></script>
+        <script
+          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZZUXJEB6v7iXbsDfiq23FfrvTN2hxaXM&callback=initMap&v=weekly"
+          defer
+          async
+        ></script>
       </body>
     </html>
   );
