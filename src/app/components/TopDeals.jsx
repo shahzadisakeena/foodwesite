@@ -322,9 +322,13 @@ const TopDeals = () => {
       {/* ===== DIALOG ===== */}
       {isDialogOpen && (
         <AlertDialog open={isDialogOpen} onOpenChange={closeDialog}>
-          <AlertDialogContent className="lg:max-w-[800px] max-w-[350px] bg-stone-deep text-white border-none rounded-3xl">
+          <AlertDialogContent
+            className="lg:max-w-[800px] max-w-[350px]  border border-stone-border
+            bg-[linear-gradient(135deg,#FFF8ED,#FFE7B3)]
+            backdrop-blur-xl shadow-2xl text-stone-red border-none rounded-3xl"
+          >
             <AlertDialogCancel className="absolute top-4 right-4 bg-stone-red border-none">
-              <X />
+              <X className="text-white" />
             </AlertDialogCancel>
 
             <div className="flex justify-center">
@@ -342,7 +346,7 @@ const TopDeals = () => {
                 {selectedDeal?.title}
               </AlertDialogTitle>
 
-              <AlertDialogDescription className="text-white/80 text-center">
+              <AlertDialogDescription className="text-black/70 text-center">
                 {selectedDeal?.desc}
               </AlertDialogDescription>
             </AlertDialogHeader>

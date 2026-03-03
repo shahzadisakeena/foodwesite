@@ -160,10 +160,13 @@ const BestSellers = () => {
       {/* ================= PRODUCT DIALOG ================= */}
       {isDialogOpen && (
         <AlertDialog open={isDialogOpen} onOpenChange={closeDialog}>
-          <AlertDialogContent className="bg-stone-deep border-none rounded-3xl max-w-[360px] lg:max-w-[800px] text-white">
+          <AlertDialogContent
+            className=" border-none rounded-3xl max-w-[360px] lg:max-w-[800px]   bg-[linear-gradient(135deg,#FFF8ED,#FFE7B3)]
+            backdrop-blur-xl shadow-2xl text-stone-red "
+          >
             {/* CLOSE */}
             <AlertDialogCancel className="absolute top-4 right-4 bg-stone-red border-none">
-              <X />
+              <X className="text-white" />
             </AlertDialogCancel>
 
             {/* IMAGE */}
@@ -178,11 +181,11 @@ const BestSellers = () => {
             </div>
 
             <AlertDialogHeader className="text-center">
-              <AlertDialogTitle className="text-3xl font-bold">
+              <AlertDialogTitle className="text-3xl text-center font-bold">
                 {selectedProduct?.title}
               </AlertDialogTitle>
 
-              <AlertDialogDescription className="text-white/80">
+              <AlertDialogDescription className="text-black/70 text-center">
                 {selectedProduct?.description}
               </AlertDialogDescription>
             </AlertDialogHeader>
