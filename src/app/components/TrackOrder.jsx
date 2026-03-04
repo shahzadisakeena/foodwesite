@@ -21,10 +21,10 @@ const TrackOrder = () => {
   };
   return (
     <div>
-      <h1 className="lg:text-3xl text-2xl font-bold  text-brand-secondary">
+      <h1 className="lg:text-3xl text-2xl font-bold  text-stone-red">
         Track Order
       </h1>
-      <div className="bg-brand-darkGray p-4 mt-6 rounded-lg lg:w-[45vw] w-full lg:h-[200px] h-[250px]">
+      <div className="bg-stone-deep p-4 mt-6 rounded-lg lg:w-[45vw] w-full lg:h-[200px] h-[250px]">
         <form ref={formRef} onSubmit={handleSubmit(onSubmit)}>
           <div className="flex lg:flex-row flex-col items-center justify-center mx-auto lg:space-x-4">
             <div className="relative lg:w-92 w-full">
