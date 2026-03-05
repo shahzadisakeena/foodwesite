@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+"use client";
+=======
 // 'use client'
 
 // import React, { useState } from 'react';
@@ -134,6 +137,7 @@
 // };
 
 // export default MenuList;
+>>>>>>> 2b4f72d1bac6ba9c39680084a40aecce0d98673e
 
 "use client";
 import React, { useState } from "react";
@@ -155,107 +159,116 @@ const MenuList = ({ items }) => {
   const [selectedItem, setSelectedItem] = useState(null);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [quantity, setQuantity] = useState(1);
-  const [initialPrice, setInitialPrice] = useState(0);
+  const [selectedSizeIndex, setSelectedSizeIndex] = useState(0);
+  const [currentPrice, setCurrentPrice] = useState(0);
+  const [selectedStuffing, setSelectedStuffing] = useState([]);
 
   const openDialog = (item) => {
     setSelectedItem(item);
     setQuantity(1);
-    setInitialPrice(item.price);
+    setSelectedSizeIndex(0);
+    setSelectedStuffing([]);
+
+    const price =
+      item.sizes && item.sizes.length > 0 ? item.sizes[0].price : item.price;
+    setCurrentPrice(price);
+
     setIsDialogOpen(true);
   };
 
   const closeDialog = () => {
     setSelectedItem(null);
     setIsDialogOpen(false);
+    setSelectedStuffing([]);
   };
 
   const incrementQuantity = () => setQuantity((p) => p + 1);
   const decrementQuantity = () => setQuantity((p) => (p > 1 ? p - 1 : 1));
 
-  const calculateTotalPrice = () => (initialPrice * quantity).toFixed(2);
+  const handleSizeChange = (index) => {
+    setSelectedSizeIndex(index);
+    setCurrentPrice(selectedItem.sizes[index].price);
+  };
+
+  const handleStuffingToggle = (option) => {
+    setSelectedStuffing((prev) =>
+      prev.includes(option)
+        ? prev.filter((o) => o !== option)
+        : [...prev, option]
+    );
+  };
+
+  const calculateTotalPrice = () => (currentPrice * quantity).toFixed(2);
 
   return (
-    <div className="flex flex-wrap gap-8 justify-center lg:justify-start">
-      {/* ================= MENU CARDS ================= */}
+    <div className="flex flex-wrap gap-6 justify-center lg:justify-start">
       {items.map((item) => (
         <div key={item.id} className="group">
           <Card
             onClick={() => openDialog(item)}
             className="
-            w-[290px] h-[420px]
-            rounded-3xl cursor-pointer
-            bg-[linear-gradient(145deg,#FFF8ED,#FFE7B3)]
-            border border-stone-border
-            shadow-lg hover:shadow-2xl
-            transition-all duration-300
-            hover:-translate-y-2
-          "
+              w-[290px] min-h-[500px]
+              rounded-3xl cursor-pointer
+              bg-[linear-gradient(145deg,#FFF8ED,#FFE7B3)]
+              border border-stone-border
+              shadow-lg hover:shadow-2xl
+              transition-all duration-300
+              hover:-translate-y-2
+            "
           >
             <CardContent className="flex flex-col h-full p-5">
-              {/* IMAGE */}
               <div className="flex justify-center">
                 <Image
                   src={item.image}
                   alt={item.name}
                   width={260}
                   height={260}
-                  className="
-                    object-contain
-                    transition-transform duration-500
-                    group-hover:scale-110
-                    drop-shadow-xl
-                  "
+                  className="object-contain transition-transform duration-500 group-hover:scale-110 drop-shadow-xl"
                 />
               </div>
 
-              {/* INFO */}
-              <div className="mt-2 space-y-1">
+              <div className="mt-2 space-y-1 flex-1">
                 <h3 className="text-xl font-bold text-stone-deep">
                   {item.name}
                 </h3>
-
                 <p className="text-sm text-stone-deep/70 line-clamp-1">
                   {item.description}
                 </p>
-
-                <p className="text-lg font-bold text-stone-red mt-1">
-                  RS {item.price}
-                </p>
+                {item.sizes ? (
+                  <div className="flex flex-col gap-2 mt-1">
+                    {item.sizes.map((size, index) => (
+                      <div key={index} className="flex justify-between">
+                        <span className="text-sm font-semibold text-stone-red">
+                          {size.label}
+                        </span>
+                        <span className="text-sm font-semibold text-stone-red">
+                          RS {size.price}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <p className="text-lg font-bold text-stone-red mt-2">
+                    RS {item.price}
+                  </p>
+                )}
               </div>
 
-              {/* BUTTON */}
               <div className="mt-auto flex justify-center">
-                <button
-                  className="
-                  bg-stone-red hover:bg-stone-orange
-                  text-white font-semibold
-                  px-5 py-2 rounded-xl
-                  shadow-md transition
-                "
-                >
+                <button className="bg-stone-red hover:bg-stone-orange text-white font-semibold px-5 py-2 rounded-xl shadow-md transition">
                   + Add to Bucket
                 </button>
               </div>
 
-              {/* HEART */}
               <Heart className="absolute top-5 right-5 text-stone-red opacity-80" />
             </CardContent>
           </Card>
         </div>
       ))}
 
-      {/* ================= DIALOG ================= */}
-      {isDialogOpen && (
+      {isDialogOpen && selectedItem && (
         <AlertDialog open={isDialogOpen} onOpenChange={closeDialog}>
-          <AlertDialogContent
-            className="
-            lg:max-w-[780px] max-w-[360px]
-            rounded-3xl border border-stone-border
-            bg-[linear-gradient(135deg,#FFF8ED,#FFE7B3)]
-            backdrop-blur-xl shadow-2xl
-          "
-          >
-            {/* CLOSE */}
+          <AlertDialogContent className="lg:max-w-[780px] max-w-[360px] rounded-3xl border border-stone-border bg-[linear-gradient(135deg,#FFF8ED,#FFE7B3)] backdrop-blur-xl shadow-2xl">
             <AlertDialogCancel
               onClick={closeDialog}
               className="absolute top-4 right-4 bg-stone-red text-white border-none"
@@ -263,55 +276,87 @@ const MenuList = ({ items }) => {
               <X />
             </AlertDialogCancel>
 
-            {/* IMAGE */}
             <div className="flex justify-center mt-2">
               <Image
-                src={selectedItem?.image}
-                alt={selectedItem?.name}
+                src={selectedItem.image}
+                alt={selectedItem.name}
                 width={300}
                 height={300}
                 className="object-contain drop-shadow-2xl"
               />
             </div>
 
-            {/* TEXT */}
             <AlertDialogHeader className="text-center">
               <AlertDialogTitle className="text-3xl font-bold text-stone-deep">
-                {selectedItem?.name}
+                {selectedItem.name}
               </AlertDialogTitle>
-
               <AlertDialogDescription className="text-stone-deep/80 px-4">
-                {selectedItem?.description}
+                {selectedItem.description}
               </AlertDialogDescription>
             </AlertDialogHeader>
 
+            {/* SIZE SELECTION */}
+            {selectedItem.sizes && (
+              <div className="flex justify-center gap-4 mt-4 flex-wrap">
+                {selectedItem.sizes.map((size, index) => (
+                  <button
+                    key={index}
+                    onClick={() => handleSizeChange(index)}
+                    className={`px-4 py-2 rounded-lg border font-semibold ${
+                      selectedSizeIndex === index
+                        ? "bg-stone-red text-white border-stone-red"
+                        : "bg-white text-stone-deep border-stone-border"
+                    }`}
+                  >
+                    {size.label} - RS {size.price}
+                  </button>
+                ))}
+              </div>
+            )}
+
+            {/* STUFFING OPTIONS */}
+            {selectedItem.stuffingOptions && (
+              <div className="flex justify-center gap-4 mt-4 flex-wrap">
+                {selectedItem.stuffingOptions.map((option, index) => (
+                  <button
+                    key={index}
+                    onClick={() => handleStuffingToggle(option)}
+                    className={`px-3 py-1 rounded-lg border font-semibold ${
+                      selectedStuffing.includes(option)
+                        ? "bg-stone-red text-white border-stone-red"
+                        : "bg-white text-stone-deep border-stone-border"
+                    }`}
+                  >
+                    {option}
+                  </button>
+                ))}
+              </div>
+            )}
+
             {/* QUANTITY */}
             <div className="flex justify-center items-center gap-6 mt-4">
-              <button onClick={decrementQuantity} className="stone-qty-btn">
+              <button
+                onClick={decrementQuantity}
+                className="stone-qty-btn border-2 border-stone-red p-1 rounded-lg"
+              >
                 <Minus />
               </button>
-
               <span className="text-2xl font-bold text-stone-deep">
                 {quantity}
               </span>
-
-              <button onClick={incrementQuantity} className="stone-qty-btn">
+              <button
+                onClick={incrementQuantity}
+                className="stone-qty-btn border-2 border-stone-red p-1 rounded-lg"
+              >
                 <Plus />
               </button>
             </div>
 
-            {/* ACTION */}
+            {/* TOTAL PRICE + ACTION */}
             <AlertDialogFooter>
-              <AlertDialogAction
-                className="
-                bg-stone-red hover:bg-stone-orange
-                text-white font-semibold
-                lg:w-[50%] w-full h-12
-                rounded-xl mx-auto
-              "
-              >
-                <span className="mr-4">{calculateTotalPrice()} RS</span>
-                Add to Bucket
+              <AlertDialogAction className="bg-stone-red hover:bg-stone-orange text-white font-semibold lg:w-[50%] w-full h-12 rounded-xl mx-auto">
+                <span className="mr-4">{calculateTotalPrice()} RS</span> Add to
+                Bucket
               </AlertDialogAction>
             </AlertDialogFooter>
           </AlertDialogContent>

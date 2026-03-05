@@ -1,192 +1,7 @@
-// "use client";
-
-// import React from "react";
-// import { Card, CardContent } from "@/components/ui/card";
-// import Image from "next/image";
-// import { Heart, X, Plus, Minus } from "lucide-react";
-// import { useState } from "react";
-// import {
-//   AlertDialog,
-//   AlertDialogContent,
-//   AlertDialogHeader,
-//   AlertDialogTitle,
-//   AlertDialogDescription,
-//   AlertDialogFooter,
-//   AlertDialogAction,
-//   AlertDialogCancel,
-// } from "@/components/ui/alert-dialog";
-// const TopDeals = () => {
-//   const [selectedDeal, setSelectedDeal] = useState(null);
-//   const [isDialogOpen, setIsDialogOpen] = useState(false);
-//   const [quantity, setQuantity] = useState(1);
-//   const [initialPrice, setInitialPrice] = useState(0);
-
-//   const CardData = [
-//     {
-//       img: "/images/BS3.png",
-//       title: "Krunch Combo",
-//       price: 950,
-//       desc: "1 Zinger Stacker + 1 Regular fries + 1 Regular drink",
-//     },
-//     {
-//       img: "/images/cat1.png",
-//       title: "Krunch Burger",
-//       price: 1350,
-//       desc: "Turn up the fun with 5 pcs Hot & Crispy Chicken + 1 Large fries + 2 Regular drinks",
-//     },
-//     {
-//       img: "/images/TD3.png",
-//       title: "Chicken & Chips",
-//       price: 2590,
-//       desc: "An ultimate meal for the fam. It includes 4 Zinger burgers + 4 pieces Hot and Crispy Chicken + 2 Dinner rolls + 1.5 Liter drink",
-//     },
-//   ];
-//   const openDialog = (deal) => {
-//     setSelectedDeal(deal);
-//     setQuantity(1);
-//     setInitialPrice(deal.price);
-//     setIsDialogOpen(true);
-//   };
-//   const closeDialog = () => {
-//     setSelectedDeal(null);
-//     setIsDialogOpen(false);
-//   };
-//   const incrementQuantity = () => {
-//     setQuantity((prev) => prev + 1);
-//   };
-//   const decrementQuantity = () => {
-//     setQuantity((prev) => (prev > 1 ? prev - 1 : 1));
-//   };
-//   const calculateTotalPrice = () => {
-//     return (initialPrice * quantity).toFixed(2);
-//   };
-//   return (
-//     <div className="h-full w-[90vw] flex flex-col mx-auto my-10 font-login tracking-wider">
-//       <div className="text-brand-secondary text-4xl uppercase font-bold font-login">
-//         <h2>
-//           <span className="relative inline-block">
-//             Top
-//             <span
-//               className="absolute bottom-0 left-0 w-full border-b-2 rounded-full border-brand-primary"
-//               style={{ width: "100%" }}
-//             />
-//           </span>
-//           <span className="mx-2">Deals</span>
-//         </h2>
-//       </div>
-
-//       <div className="flex items-center lg:justify-start justify-center flex-wrap gap-6 mt-8 ">
-//         {CardData.map((deal, index) => (
-//           <div key={index} className="p-1 group">
-//             <Card
-//               className="cursor-pointer rounded-md h-[460px] w-[295px] relative shadow-lg"
-//               onClick={() => {
-//                 openDialog(deal);
-//               }}
-//             >
-//               <CardContent className="flex flex-col justify-center mx-auto h-full p-4">
-//                 <div className="flex justify-center items-center">
-//                   <Image
-//                     src={deal.img}
-//                     alt={`Card ${deal.title}`}
-//                     width={300}
-//                     height={300}
-//                     className="object-cover rounded-lg transition-transform group-hover:scale-110 duration-300"
-//                   />
-//                 </div>
-//                 <div className="flex flex-col items-start justify-start mt-4">
-//                   <div className="relative inline-block text-brand-secondary text-xl font-bold">
-//                     {deal.title}
-//                   </div>
-//                   <div className="text-sm text-brand-secondary  line-clamp-2 mt-2">
-//                     {deal.desc}
-//                   </div>
-//                   <div className="text-md font-bold mt-4 text-brand-secondary">
-//                     <span>RS.</span> {deal.price}
-//                   </div>
-//                 </div>
-//                 <div className=" flex items-center justify-center mx-auto w-40">
-//                   <button className="absolute -bottom-4  bg-brand-primary hover:bg-brand-secondary hover:text-brand-primary duration-500 px-4 py-2 rounded-md text-brand-secondary text-sm font-bold">
-//                     + Add to Bucket
-//                   </button>
-//                 </div>
-//                 <div className="absolute top-4 right-4">
-//                   <Heart className="text-brand-primary" />
-//                 </div>
-//               </CardContent>
-//             </Card>
-//           </div>
-//         ))}
-//       </div>
-//       {isDialogOpen && (
-//         <AlertDialog open={isDialogOpen} onOpenChange={closeDialog}>
-//           <AlertDialogContent className="lg:max-w-[800px] max-w-[350px] h-[550px] lg:h-[600px] font-login tracking-wider bg-brand-darkGray border-none !rounded-3xl">
-//             <AlertDialogCancel
-//               onClick={closeDialog}
-//               className="absolute top-4 right-4 bg-brand-primary border-none"
-//             >
-//               <X strokeWidth={4} />
-//             </AlertDialogCancel>
-
-//             <div className="flex justify-center lg:my-4">
-//               <Image
-//                 src={selectedDeal?.img}
-//                 alt={selectedDeal?.title}
-//                 width={300}
-//                 height={300}
-//                 className="object-cover w-[250px] h-[250px]"
-//               />
-//             </div>
-//             <div className="flex flex-col items-center justify-center mx-auto">
-//               <AlertDialogHeader>
-//                 <AlertDialogTitle className="lg:text-4xl text-2xl text-brand-secondary text-center lg:-mt-14 -mt-4">
-//                   {selectedDeal?.title}
-//                 </AlertDialogTitle>
-//                 <AlertDialogDescription className="lg:text-lg text-md text-brand-secondary lg:px-36 text-center">
-//                   {selectedDeal?.desc}
-//                 </AlertDialogDescription>
-//               </AlertDialogHeader>
-//               <div className="flex items-center justify-center lg:mt-6 mt-2">
-//                 <button
-//                   onClick={decrementQuantity}
-//                   className=" text-brand-secondary border-2 border-brand-primary p-1 rounded-lg"
-//                 >
-//                   <Minus />
-//                 </button>
-//                 <div className=" text-brand-secondary text-2xl px-6 py-2">
-//                   {quantity}
-//                 </div>
-//                 <button
-//                   onClick={incrementQuantity}
-//                   className="border-2 border-brand-primary text-brand-secondary p-1 rounded-lg"
-//                 >
-//                   <Plus />
-//                 </button>
-//               </div>
-//             </div>
-
-//             <AlertDialogFooter>
-//               <AlertDialogAction className="bg-brand-primary text-xl text-brand-secondary   lg:w-[50%] lg:h-14 h-12 flex justify-center lg:mt-2 items-center mx-auto ">
-//                 {" "}
-//                 <span className="mr-6"> {calculateTotalPrice()} RS</span> Add to
-//                 Bucket
-//               </AlertDialogAction>
-//             </AlertDialogFooter>
-//           </AlertDialogContent>
-//         </AlertDialog>
-//       )}
-//     </div>
-//   );
-// };
-
-// export default TopDeals;
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import Image from "next/image";
-import { Heart, X, Plus, Minus } from "lucide-react";
-
 import {
   AlertDialog,
   AlertDialogContent,
@@ -194,185 +9,249 @@ import {
   AlertDialogTitle,
   AlertDialogDescription,
   AlertDialogFooter,
-  AlertDialogAction,
   AlertDialogCancel,
+  AlertDialogAction,
 } from "@/components/ui/alert-dialog";
+import Image from "next/image";
+import { Heart, X, Minus, Plus, ChevronLeft, ChevronRight } from "lucide-react";
+import menuData from "@/data/menuData";
 
-const TopDeals = () => {
-  const [selectedDeal, setSelectedDeal] = useState(null);
+const HotDealsCarousel = () => {
+  const [selectedItem, setSelectedItem] = useState(null);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [quantity, setQuantity] = useState(1);
-  const [initialPrice, setInitialPrice] = useState(0);
+  const [selectedSizeIndex, setSelectedSizeIndex] = useState(0);
+  const [currentPrice, setCurrentPrice] = useState(0);
+  const [selectedStuffing, setSelectedStuffing] = useState([]);
 
-  const CardData = [
-    {
-      img: "/images/BS3.png",
-      title: "Krunch Combo",
-      price: 950,
-      desc: "1 Zinger Stacker + Fries + Regular Drink",
-    },
-    {
-      img: "/images/cat1.png",
-      title: "Krunch Burger",
-      price: 1350,
-      desc: "5 pcs Hot & Crispy Chicken + Large fries + 2 Drinks",
-    },
-    {
-      img: "/images/TD3.png",
-      title: "Chicken & Chips",
-      price: 2590,
-      desc: "4 Zinger burgers + 4 Crispy Chicken + Dinner rolls + 1.5L drink",
-    },
+  const carouselRef = useRef(null);
+
+  const CardSlide = [
+    menuData["hotdeals"][0],
+    menuData["hotdeals"][1],
+    menuData["hotdeals"][2],
+    menuData["hotdeals"][3],
+    menuData["hotdeals"][4],
+    menuData["hotdeals"][5],
+    menuData["hotdeals"][6],
+    menuData["hotdeals"][7],
   ];
 
-  const openDialog = (deal) => {
-    setSelectedDeal(deal);
+  const openDialog = (item) => {
+    setSelectedItem(item);
     setQuantity(1);
-    setInitialPrice(deal.price);
+    setSelectedSizeIndex(0);
+    setSelectedStuffing([]);
+    const price = item.sizes?.[0]?.price || item.price;
+    setCurrentPrice(price);
     setIsDialogOpen(true);
   };
 
   const closeDialog = () => {
-    setSelectedDeal(null);
+    setSelectedItem(null);
     setIsDialogOpen(false);
   };
 
   const incrementQuantity = () => setQuantity((p) => p + 1);
   const decrementQuantity = () => setQuantity((p) => (p > 1 ? p - 1 : 1));
+  const handleSizeChange = (index) => {
+    setSelectedSizeIndex(index);
+    setCurrentPrice(selectedItem.sizes[index].price);
+  };
+  const handleStuffingToggle = (option) => {
+    setSelectedStuffing((prev) =>
+      prev.includes(option)
+        ? prev.filter((o) => o !== option)
+        : [...prev, option]
+    );
+  };
+  const calculateTotalPrice = () => (currentPrice * quantity).toFixed(0);
 
-  const calculateTotalPrice = () => (initialPrice * quantity).toFixed(0);
+  const scrollLeft = () => {
+    if (carouselRef.current) {
+      carouselRef.current.scrollBy({ left: -300, behavior: "smooth" });
+    }
+  };
+
+  const scrollRight = () => {
+    if (carouselRef.current) {
+      carouselRef.current.scrollBy({ left: 300, behavior: "smooth" });
+    }
+  };
 
   return (
-    <section className="w-[90vw] mx-auto my-16 font-login">
-      {/* ===== HEADING ===== */}
-      <div className="text-center lg:text-left mb-10">
-        <h2 className="text-stone-deep text-6xl font-extrabold uppercase">
-          <span className="relative inline-block">
-            Top
-            <span className="absolute -bottom-1 left-0 w-[70%] border-b-4 border-stone-red rounded-full"></span>
-          </span>
-          <span className="ml-3 text-stone-red">Deals</span>
-        </h2>
+    <section className="w-full my-16">
+      <div className="container w-[90vw] mx-auto relative">
+        {/* HEADING */}
+        <div className="text-center lg:text-left mb-10">
+          <h2 className="text-stone-deep text-6xl font-extrabold uppercase">
+            <span className="relative inline-block">
+              Hot
+              <span className="absolute -bottom-1 left-0 w-[70%] border-b-4 border-stone-red rounded-full"></span>
+            </span>
+            <span className="ml-3 text-stone-red">Deals</span>
+          </h2>
+        </div>
+
+        {/* LEFT / RIGHT BUTTONS */}
+        <button
+          onClick={scrollLeft}
+          className="absolute left-0 top-1/2 -translate-y-1/2 bg-stone-red text-white p-3 rounded-full z-10 shadow-md"
+        >
+          <ChevronLeft />
+        </button>
+        <button
+          onClick={scrollRight}
+          className="absolute right-0 top-1/2 -translate-y-1/2 bg-stone-red text-white p-3 rounded-full z-10 shadow-md"
+        >
+          <ChevronRight />
+        </button>
+
+        {/* CAROUSEL */}
+        <div
+          ref={carouselRef}
+          className="flex overflow-x-auto scroll-smooth gap-4 scrollbar-hide pb-10"
+        >
+          {CardSlide.map((item, index) => (
+            <Card
+              key={index}
+              onClick={() => openDialog(item)}
+              className="w-[290px] min-h-[500px] rounded-3xl cursor-pointer bg-[linear-gradient(145deg,#FFF8ED,#FFE7B3)] border border-stone-border shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 flex-shrink-0"
+            >
+              <CardContent className="flex flex-col h-full p-5 group relative">
+                <div className="flex justify-center">
+                  <Image
+                    src={item.image}
+                    alt={item.name}
+                    width={260}
+                    height={260}
+                    className="object-contain transition-transform duration-500 group-hover:scale-110 drop-shadow-xl"
+                  />
+                </div>
+                <div className="mt-2 space-y-1 flex-1">
+                  <h3 className="text-xl font-bold text-stone-deep">
+                    {item.name}
+                  </h3>
+                  <p className="text-sm text-stone-deep/70 line-clamp-1">
+                    {item.description}
+                  </p>
+                  {item.sizes ? (
+                    <div className="flex flex-col gap-2 mt-1">
+                      {item.sizes.map((size, i) => (
+                        <div key={i} className="flex justify-between">
+                          <span className="text-sm font-semibold text-stone-red">
+                            {size.label}
+                          </span>
+                          <span className="text-sm font-semibold text-stone-red">
+                            RS {size.price}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <p className="text-lg font-bold text-stone-red mt-2">
+                      RS {item.price}
+                    </p>
+                  )}
+                </div>
+                <div className="mt-auto flex justify-center">
+                  <button className="bg-stone-red hover:bg-stone-orange text-white font-semibold px-5 py-2 rounded-xl shadow-md transition">
+                    + Add to Bucket
+                  </button>
+                </div>
+                <Heart className="absolute top-5 right-5 text-stone-red opacity-80" />
+              </CardContent>
+            </Card>
+          ))}
+        </div>
       </div>
 
-      {/* ===== CARDS ===== */}
-      <div className="flex flex-wrap justify-center lg:justify-start gap-8 mt-10">
-        {CardData.map((deal, index) => (
-          <Card
-            key={index}
-            onClick={() => openDialog(deal)}
-            className="
-    group cursor-pointer
-    w-[295px] h-[460px]
-    rounded-2xl
-    border border-stone-red
-    shadow-lg
-    transition-all duration-300
-    bg-[linear-gradient(135deg,#FFF8ED_0%,#FFE7B3_45%,#FFF1D6_100%)]"
-          >
-            <CardContent className="relative flex flex-col h-full p-5">
-              {/* IMAGE */}
-              <div className="flex justify-center">
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-[radial-gradient(circle_at_50%_20%,rgba(255,210,63,0.35),transparent_60%)]" />
-                <Image
-                  src={deal.img}
-                  alt={deal.title}
-                  width={300}
-                  height={300}
-                  className="object-contain transition-transform duration-300 group-hover:scale-110"
-                />
-              </div>
-
-              {/* CONTENT */}
-              <div className="mt-4">
-                <h3 className="text-xl font-bold text-stone-deep">
-                  {deal.title}
-                </h3>
-
-                <p className="text-sm text-stone-deep/70 line-clamp-2 mt-2">
-                  {deal.desc}
-                </p>
-
-                <p className="text-lg font-bold mt-4 text-stone-red">
-                  RS. {deal.price}
-                </p>
-              </div>
-
-              {/* ADD BUTTON */}
-              <button
-                className="
-                absolute -bottom-4 left-1/2 -translate-x-1/2
-                bg-stone-red text-white
-                px-5 py-2 rounded-lg font-semibold
-                shadow-lg
-                hover:bg-stone-orange
-                transition
-                "
-              >
-                + Add to Bucket
-              </button>
-
-              {/* HEART */}
-              <Heart className="absolute top-4 right-4 text-stone-red" />
-            </CardContent>
-          </Card>
-        ))}
-      </div>
-
-      {/* ===== DIALOG ===== */}
-      {isDialogOpen && (
+      {/* PRODUCT DIALOG */}
+      {isDialogOpen && selectedItem && (
         <AlertDialog open={isDialogOpen} onOpenChange={closeDialog}>
-          <AlertDialogContent
-            className="lg:max-w-[800px] max-w-[350px]  border border-stone-border
-            bg-[linear-gradient(135deg,#FFF8ED,#FFE7B3)]
-            backdrop-blur-xl shadow-2xl text-stone-red border-none rounded-3xl"
-          >
-            <AlertDialogCancel className="absolute top-4 right-4 bg-stone-red border-none">
-              <X className="text-white" />
+          <AlertDialogContent className="lg:max-w-[780px] max-w-[360px] rounded-3xl border border-stone-border bg-[linear-gradient(135deg,#FFF8ED,#FFE7B3)] backdrop-blur-xl shadow-2xl">
+            <AlertDialogCancel className="absolute top-4 right-4 bg-stone-red text-white border-none">
+              <X />
             </AlertDialogCancel>
-
-            <div className="flex justify-center">
+            <div className="flex justify-center mt-2">
               <Image
-                src={selectedDeal?.img}
-                alt=""
+                src={selectedItem.image}
+                alt={selectedItem.name}
                 width={300}
                 height={300}
-                className="object-contain"
+                className="object-contain drop-shadow-2xl"
               />
             </div>
-
-            <AlertDialogHeader>
-              <AlertDialogTitle className="text-3xl text-center">
-                {selectedDeal?.title}
+            <AlertDialogHeader className="text-center">
+              <AlertDialogTitle className="text-3xl font-bold text-stone-deep">
+                {selectedItem.name}
               </AlertDialogTitle>
-
-              <AlertDialogDescription className="text-black/70 text-center">
-                {selectedDeal?.desc}
+              <AlertDialogDescription className="text-stone-deep/80 px-4">
+                {selectedItem.description}
               </AlertDialogDescription>
             </AlertDialogHeader>
 
+            {/* SIZE */}
+            {selectedItem.sizes && (
+              <div className="flex justify-center gap-4 mt-4 flex-wrap">
+                {selectedItem.sizes.map((size, index) => (
+                  <button
+                    key={index}
+                    onClick={() => handleSizeChange(index)}
+                    className={`px-4 py-2 rounded-lg border font-semibold ${
+                      selectedSizeIndex === index
+                        ? "bg-stone-red text-white border-stone-red"
+                        : "bg-white text-stone-deep border-stone-border"
+                    }`}
+                  >
+                    {size.label} - RS {size.price}
+                  </button>
+                ))}
+              </div>
+            )}
+
+            {/* STUFFING */}
+            {selectedItem.stuffingOptions && (
+              <div className="flex justify-center gap-4 mt-4 flex-wrap">
+                {selectedItem.stuffingOptions.map((option, index) => (
+                  <button
+                    key={index}
+                    onClick={() => handleStuffingToggle(option)}
+                    className={`px-3 py-1 rounded-lg border font-semibold ${
+                      selectedStuffing.includes(option)
+                        ? "bg-stone-red text-white border-stone-red"
+                        : "bg-white text-stone-deep border-stone-border"
+                    }`}
+                  >
+                    {option}
+                  </button>
+                ))}
+              </div>
+            )}
+
             {/* QUANTITY */}
-            <div className="flex justify-center items-center gap-5 mt-4">
+            <div className="flex justify-center items-center gap-6 mt-4">
               <button
                 onClick={decrementQuantity}
-                className="border-2 border-stone-red p-2 rounded-lg"
+                className="border-2 border-stone-red p-1 rounded-lg"
               >
                 <Minus />
               </button>
-
-              <span className="text-2xl">{quantity}</span>
-
+              <span className="text-2xl font-bold text-stone-deep">
+                {quantity}
+              </span>
               <button
                 onClick={incrementQuantity}
-                className="border-2 border-stone-red p-2 rounded-lg"
+                className="border-2 border-stone-red p-1 rounded-lg"
               >
                 <Plus />
               </button>
             </div>
 
             <AlertDialogFooter>
-              <AlertDialogAction className="bg-stone-red hover:bg-stone-orange w-full h-12 text-lg font-semibold rounded-xl">
-                {calculateTotalPrice()} RS — Add to Bucket
+              <AlertDialogAction className="bg-stone-red hover:bg-stone-orange text-white font-semibold lg:w-[50%] w-full h-12 rounded-xl mx-auto">
+                <span className="mr-4">{calculateTotalPrice()} RS</span> Add to
+                Bucket
               </AlertDialogAction>
             </AlertDialogFooter>
           </AlertDialogContent>
@@ -382,4 +261,4 @@ const TopDeals = () => {
   );
 };
 
-export default TopDeals;
+export default HotDealsCarousel;
