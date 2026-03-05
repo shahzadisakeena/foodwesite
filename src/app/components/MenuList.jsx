@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-"use client";
-=======
 // 'use client'
 
 // import React, { useState } from 'react';
@@ -137,7 +134,6 @@
 // };
 
 // export default MenuList;
->>>>>>> 2b4f72d1bac6ba9c39680084a40aecce0d98673e
 
 "use client";
 import React, { useState } from "react";
@@ -194,7 +190,7 @@ const MenuList = ({ items }) => {
     setSelectedStuffing((prev) =>
       prev.includes(option)
         ? prev.filter((o) => o !== option)
-        : [...prev, option]
+        : [...prev, option],
     );
   };
 

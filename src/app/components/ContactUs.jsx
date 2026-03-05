@@ -99,35 +99,23 @@
 // };
 
 // export default ContactUs;
-"use client";
 
+"use client";
 import { Mail, MapPin, Phone } from "lucide-react";
 import React from "react";
-
 const ContactUs = () => {
-  const offices = [
-    {
-      title: "Head Office",
-      phone: "0213-1234567",
-      location:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, ullam.",
-    },
-    {
-      title: "Regional Office Lahore",
-      phone: "042-1234567",
-      location:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, quibusdam?",
-    },
-    {
-      title: "Regional Office Islamabad",
-      phone: "012345678",
-      location:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima illo assumenda.",
-    },
-  ];
+  const office = {
+    title: "StoneBake Dina Branch",
+    phone: "0325 6120333",
+    telephone: "0544 687788",
+    whatsapp: "0340 1520333",
+    location: "Mangla Road, City Dina, District Jhelum, Pakistan",
+    email: "stonebake2001@gmail.com",
+  };
 
   return (
-    <section className="bg-stone-bg py-16 lg:py-24">
+    <section className=" py-14 lg:py-20">
+      {" "}
       <div className="container w-[90vw] mx-auto p-4">
         {/* HEADING */}
         <div className="text-center mb-14">
@@ -137,73 +125,59 @@ const ContactUs = () => {
           <div className="w-24 h-1 bg-stone-red mx-auto mt-4 rounded-full" />
         </div>
 
-        {/* OFFICE CARDS */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {offices.map((office, index) => (
-            <div
-              key={index}
-              className="
-              bg-white/70
-              backdrop-blur-xl
-              border border-stone-border
-              rounded-3xl
-              p-6
-              shadow-lg
-              transition-all
-              duration-300
-              hover:-translate-y-2
-              hover:shadow-2xl
-              "
-            >
-              <div className="flex items-center mb-3">
-                <Phone className="text-stone-red" />
-                <h3 className="text-xl font-bold ml-2 text-stone-deep">
-                  {office.title}
-                </h3>
-              </div>
+        {/* MAIN CONTACT CARD */}
+        <div className="max-w-3xl mx-auto">
+          <div
+            className="
+        bg-white/70
+        backdrop-blur-xl
+        border border-stone-border
+        rounded-3xl
+        p-8
+        shadow-xl
+        space-y-6
+        "
+          >
+            {/* BRANCH TITLE */}
+            <h3 className="text-2xl font-bold text-stone-deep text-center">
+              {office.title}
+            </h3>
 
-              <p className="text-lg text-stone-deep font-semibold">
-                {office.phone}
-              </p>
-
-              <div className="flex items-center mt-6">
-                <MapPin className="text-stone-red" />
-                <h4 className="text-lg font-bold ml-2 text-stone-deep">
-                  Location
-                </h4>
-              </div>
-
-              <p className="text-stone-deep/80 mt-2 text-sm leading-relaxed">
-                {office.location}
-              </p>
+            {/* LOCATION */}
+            <div className="flex items-start gap-3">
+              <MapPin className="text-stone-red mt-1" />
+              <p className="text-stone-deep/90">{office.location}</p>
             </div>
-          ))}
-        </div>
 
-        {/* HELPLINE + EMAIL */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-10">
-          {/* HELPLINE */}
-          <div className="bg-white/70 backdrop-blur-xl border border-stone-border rounded-3xl p-6 shadow-lg">
-            <div className="flex items-center">
+            {/* MOBILE */}
+            <div className="flex items-center gap-3">
               <Phone className="text-stone-red" />
-              <h3 className="text-xl font-bold ml-2 text-stone-deep">
-                Helpline
-              </h3>
+              <p className="text-stone-deep font-semibold">
+                Mobile: {office.phone}
+              </p>
             </div>
 
-            <p className="text-lg text-stone-deep mt-3">UAN: 111 444 523</p>
-          </div>
+            {/* TELEPHONE */}
+            <div className="flex items-center gap-3">
+              <Phone className="text-stone-red" />
+              <p className="text-stone-deep font-semibold">
+                Telephone: {office.telephone}
+              </p>
+            </div>
 
-          {/* EMAIL */}
-          <div className="bg-white/70 backdrop-blur-xl border border-stone-border rounded-3xl p-6 shadow-lg">
-            <div className="flex items-center">
+            {/* WHATSAPP */}
+            <div className="flex items-center gap-3">
+              <Phone className="text-stone-red" />
+              <p className="text-stone-deep font-semibold">
+                WhatsApp: {office.whatsapp}
+              </p>
+            </div>
+
+            {/* EMAIL */}
+            <div className="flex items-center gap-3">
               <Mail className="text-stone-red" />
-              <h3 className="text-xl font-bold ml-2 text-stone-deep">
-                Complaints Email
-              </h3>
+              <p className="text-stone-deep font-semibold">{office.email}</p>
             </div>
-
-            <p className="text-lg text-stone-deep mt-3">example@gmail.com</p>
           </div>
         </div>
       </div>

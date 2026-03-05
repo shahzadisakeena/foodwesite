@@ -140,7 +140,7 @@ import React from "react";
 
 const PrivacyPolicy = () => {
   return (
-    <main className="bg-stone-bg py-14 lg:py-24">
+    <main className="py-14 lg:py-24">
       {/* PAGE CONTAINER */}
       <div className="w-[92vw] max-w-5xl mx-auto">
         {/* CARD WRAPPER */}
@@ -152,11 +152,11 @@ const PrivacyPolicy = () => {
             </h1>
 
             <p className="mt-4 text-stone-deep/70 text-sm md:text-base">
-              StoneBake Corporation Privacy Policy — Your Privacy Rights
+              StoneBake Privacy Policy — Protecting Your Information
             </p>
 
             <p className="text-stone-red font-semibold mt-2 text-sm tracking-wide">
-              Effective Date: June 9, 2014
+              Effective Date: March 2026
             </p>
           </div>
 
@@ -164,50 +164,81 @@ const PrivacyPolicy = () => {
           <div className="space-y-10 leading-relaxed">
             {/* SECTION */}
             <Section
-              title="This Privacy Policy Applies to the Sites"
-              text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quidem nostrum distinctio adipisci cum veniam."
+              title="This Privacy Policy Applies to the StoneBake Website"
+              text="This privacy policy explains how StoneBake collects, uses, and protects the personal information you provide when using our website, placing orders online, or interacting with our services. By using our website, you agree to the practices described in this policy."
             />
 
+            {/* SECTION */}
             <Section
-              title="We Collect Information From and About You"
+              title="Information We Collect"
               list={[
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                "Assumenda, dolorem? Dicta a cumque praesentium possimus.",
-                "Officiis debitis laudantium aliquam perferendis.",
-                "Quas sapiente voluptates asperiores numquam commodi.",
+                "Personal details such as your name, phone number, and delivery address when placing an order.",
+                "Order information including items purchased and payment details.",
+                "Technical data such as IP address, browser type, and device information.",
+                "Customer feedback, support requests, or communication with our team.",
               ]}
             />
 
+            {/* SECTION */}
             <Section
-              title="We Use Information As Disclosed and Described Here"
+              title="How We Use Your Information"
               list={[
-                "We improve customer experience and services.",
-                "Provide support and respond to inquiries.",
-                "Enhance website performance and personalization.",
-                "Comply with applicable legal requirements.",
+                "To process and deliver your food orders accurately.",
+                "To communicate order confirmations, delivery updates, and support responses.",
+                "To improve our website, menu offerings, and customer experience.",
+                "To send promotional offers, discounts, or updates about StoneBake services.",
+                "To comply with legal obligations and prevent fraudulent activities.",
               ]}
             />
 
+            {/* SECTION */}
             <Section
-              title="Your Choices About Information Usage"
+              title="Sharing Your Information"
+              text="StoneBake does not sell or rent your personal information to third parties. However, we may share limited information with delivery partners, payment processors, and service providers strictly for the purpose of completing your order or maintaining our services."
+            />
+
+            {/* SECTION */}
+            <Section
+              title="Cookies and Website Analytics"
               list={[
-                "You may opt out of promotional communications.",
-                "You can manage cookies and browser settings anytime.",
+                "We use cookies to enhance website functionality and remember your preferences.",
+                "Cookies help us analyze how visitors use our website so we can improve performance.",
+                "You can disable cookies through your browser settings at any time.",
               ]}
             />
 
+            {/* SECTION */}
             <Section
-              title="Update or Delete Your Account Information"
+              title="Your Privacy Choices"
               list={[
-                "Request account updates anytime.",
-                "Delete personal information upon request.",
-                "Modify communication preferences.",
+                "You may opt out of marketing emails or promotional messages anytime.",
+                "You can request access to the personal data we hold about you.",
+                "You may request corrections or deletion of your personal information.",
               ]}
             />
 
+            {/* SECTION */}
             <Section
-              title="Security & Protection"
-              text="We maintain reasonable safeguards designed to protect your personal information from unauthorized access, disclosure, or misuse."
+              title="Security of Your Information"
+              text="StoneBake uses reasonable security measures to protect your personal information from unauthorized access, misuse, or disclosure. While we take strong precautions, no online system can guarantee complete security."
+            />
+
+            {/* SECTION */}
+            <Section
+              title="Children's Privacy"
+              text="StoneBake services are intended for users aged 13 and above. We do not knowingly collect personal information from children without parental consent."
+            />
+
+            {/* SECTION */}
+            <Section
+              title="Updates to This Privacy Policy"
+              text="StoneBake may update this Privacy Policy from time to time to reflect changes in our services or legal requirements. Any updates will be posted on this page with a revised effective date."
+            />
+
+            {/* SECTION */}
+            <Section
+              title="Contact Us"
+              text="If you have questions about this Privacy Policy or how your information is handled, please contact StoneBake through the contact information provided on our website."
             />
           </div>
         </div>

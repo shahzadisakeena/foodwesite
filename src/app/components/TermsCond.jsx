@@ -170,7 +170,7 @@ import React from "react";
 
 const TermsCond = () => {
   return (
-    <section className=" py-14 lg:py-20">
+    <section className="py-14 lg:py-20">
       <div
         className="
         w-[92vw] lg:w-[80vw] mx-auto
@@ -202,110 +202,129 @@ const TermsCond = () => {
         <div className="space-y-10 text-stone-deep/85 text-sm lg:text-base">
           {/* INTRO */}
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis
-            accusamus totam sint eius deleniti laudantium dicta asperiores
-            provident. Iure, odio! Possimus hic sit assumenda ut officiis
-            maiores dolore.
+            Welcome to StoneBake. By accessing or placing an order through our
+            website or mobile platform, you agree to comply with the following
+            terms and conditions. These terms govern your use of the StoneBake
+            website, online ordering system, and all related services.
           </p>
 
           {/* SECTION */}
           <div>
-            <h3 className="section-title">
-              NO WARRANTY / LIMITATION ON LIABILITY
-            </h3>
+            <h3 className="section-title">ORDERING & PAYMENT</h3>
 
             <p className="section-text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque,
-              enim molestias quo corrupti soluta, praesentium id alias
-              doloribus.
+              Customers may place orders through our website for delivery or
+              pickup. All orders must be paid for using the available payment
+              options listed at checkout.
             </p>
 
             <p className="section-text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
-              sit eveniet aliquid quidem vitae omnis suscipit.
-            </p>
-          </div>
-
-          {/* SECTION */}
-          <div>
-            <h3 className="section-title">COMMUNICATING WITH STONEBAKE</h3>
-
-            <p className="section-text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
-              repellat accusamus cupiditate aliquam exercitationem alias quasi.
+              StoneBake reserves the right to cancel or refuse any order if
+              payment verification fails, items are unavailable, or incorrect
+              information is provided.
             </p>
           </div>
 
           {/* SECTION */}
           <div>
-            <h3 className="section-title">STONEBAKE PROPERTY</h3>
+            <h3 className="section-title">DELIVERY POLICY</h3>
 
             <p className="section-text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus
-              nostrum dolor quasi quod, cum placeat accusamus odit
-              exercitationem.
+              Delivery times provided on the website are estimates and may vary
+              depending on traffic, weather, or order volume. While we aim to
+              deliver as quickly as possible, StoneBake cannot guarantee exact
+              delivery times.
+            </p>
+
+            <p className="section-text">
+              Customers must provide accurate delivery details. Incorrect
+              addresses may result in delayed or cancelled deliveries.
             </p>
           </div>
 
           {/* SECTION */}
           <div>
-            <h3 className="section-title">USER-SUBMITTED CONTENT</h3>
+            <h3 className="section-title">PRODUCT AVAILABILITY</h3>
 
             <p className="section-text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Blanditiis accusamus odio perferendis.
+              Menu items, prices, and promotions may change without prior
+              notice. In rare cases where an item becomes unavailable after
+              ordering, StoneBake may offer a replacement item or refund.
+            </p>
+          </div>
+
+          {/* SECTION */}
+          <div>
+            <h3 className="section-title">REFUND & CANCELLATION POLICY</h3>
+
+            <p className="section-text">
+              Orders cannot be cancelled once preparation has started. Refunds
+              may only be issued if an order was not delivered or if there was a
+              verified issue with the order.
             </p>
 
             <ul className="list-disc pl-6 space-y-2 mt-4">
-              <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
-              <li>Alias laborum aut sit explicabo vero nemo nesciunt.</li>
-              <li>Pariatur quia natus culpa autem.</li>
-              <li>Tempora animi amet alias iure.</li>
-              <li>Dolorum adipisci amet nam corporis.</li>
-              <li>Quisquam optio expedita natus debitis.</li>
+              <li>Incorrect or missing items may qualify for a replacement.</li>
+              <li>
+                Refunds are processed through the original payment method.
+              </li>
+              <li>Delivery charges may not be refundable.</li>
+              <li>Refund requests must be submitted within 24 hours.</li>
             </ul>
           </div>
 
           {/* SECTION */}
           <div>
-            <h3 className="section-title">ONLINE PURCHASES</h3>
+            <h3 className="section-title">USER RESPONSIBILITY</h3>
+
             <p className="section-text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, nemo
-              nobis porro est iure soluta.
+              Users agree to provide accurate personal information when placing
+              orders. Any misuse of the website, including fraudulent orders,
+              may result in account suspension or legal action.
             </p>
           </div>
 
           {/* SECTION */}
           <div>
-            <h3 className="section-title">WEB SITE ACCESS</h3>
+            <h3 className="section-title">INTELLECTUAL PROPERTY</h3>
+
             <p className="section-text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat
-              nobis molestiae exercitationem dolore doloribus ea laborum.
+              All content on the StoneBake website including logos, images, menu
+              items, branding, and design are the property of StoneBake and may
+              not be copied, reproduced, or distributed without permission.
             </p>
           </div>
 
           {/* SECTION */}
           <div>
-            <h3 className="section-title">INDEMNIFICATION</h3>
+            <h3 className="section-title">LIMITATION OF LIABILITY</h3>
+
             <p className="section-text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              StoneBake will not be responsible for any indirect damages
+              resulting from the use of our website or services, including
+              delays caused by external factors such as weather or traffic.
             </p>
           </div>
 
           {/* SECTION */}
           <div>
-            <h3 className="section-title">TEXT MESSAGING NOTICE</h3>
+            <h3 className="section-title">CHANGES TO TERMS</h3>
+
             <p className="section-text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              StoneBake reserves the right to update or modify these terms at
+              any time. Continued use of the website after updates means you
+              accept the revised terms.
             </p>
           </div>
 
           {/* SECTION */}
           <div>
-            <h3 className="section-title">GOVERNING LAW & JURISDICTION</h3>
+            <h3 className="section-title">CONTACT INFORMATION</h3>
+
             <p className="section-text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione
-              porro cumque quibusdam optio ut.
+              If you have any questions regarding these Terms & Conditions,
+              please contact StoneBake customer support through the contact
+              information provided on our website.
             </p>
           </div>
         </div>

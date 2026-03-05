@@ -816,7 +816,7 @@ const Careers = () => {
   /* ================= UI ================= */
 
   return (
-    <main className="bg-stone-bg py-14 lg:py-20">
+    <main className=" py-14 lg:py-24">
       {/* PAGE TITLE */}
       <div className="text-center mb-14">
         <h1 className="text-4xl md:text-5xl font-extrabold text-stone-deep">
@@ -849,26 +849,6 @@ const Careers = () => {
                 onChange={(e) => setDob(e.target.value)}
               />
               <TextField
-                label="Country of Birth"
-                variant="filled"
-                fullWidth
-                value={cob}
-                onChange={(e) => setCob(e.target.value)}
-              />
-              <TextField
-                label="City of Birth"
-                variant="filled"
-                fullWidth
-                value={ciob}
-                onChange={(e) => setCiob(e.target.value)}
-              />
-            </FormGrid>
-          </Section>
-
-          {/* ================= ADDRESS ================= */}
-          <Section title="Address" icon={<RiMapPin2Fill />}>
-            <FormGrid>
-              <TextField
                 label="Phone Number"
                 variant="filled"
                 fullWidth
@@ -890,45 +870,18 @@ const Careers = () => {
                 onChange={(e) => setAddress(e.target.value)}
               />
               <TextField
-                label="Country"
+                label="Bike Availibility"
                 variant="filled"
                 fullWidth
-                value={country}
-                onChange={(e) => setCountry(e.target.value)}
+                value={recentCompany}
+                onChange={(e) => setRecentCompany(e.target.value)}
               />
-              <TextField
-                label="Province"
-                variant="filled"
-                fullWidth
-                value={province}
-                onChange={(e) => setProvince(e.target.value)}
-              />
-            </FormGrid>
-          </Section>
-
-          {/* ================= EXPERIENCE ================= */}
-          <Section title="Experience" icon={<RiStarFill />}>
-            <FormGrid>
               <TextField
                 label="Total Experience"
                 variant="filled"
                 fullWidth
                 value={totalYearsOfExperience}
                 onChange={(e) => setTotalYearsOfExperience(e.target.value)}
-              />
-              <TextField
-                label="Recent Position"
-                variant="filled"
-                fullWidth
-                value={recentPosition}
-                onChange={(e) => setRecentPosition(e.target.value)}
-              />
-              <TextField
-                label="Recent Company"
-                variant="filled"
-                fullWidth
-                value={recentCompany}
-                onChange={(e) => setRecentCompany(e.target.value)}
               />
             </FormGrid>
           </Section>
