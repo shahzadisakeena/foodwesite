@@ -40,7 +40,7 @@ export default function AboutHero() {
       />
 
       {/* ===== DARK PREMIUM OVERLAY ===== */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/30" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/60 to-black/30" />
 
       {/* ===== CONTENT WRAPPER ===== */}
       <div className="relative z-10 container w-[90vw] mx-auto flex justify-center lg:justify-end">
